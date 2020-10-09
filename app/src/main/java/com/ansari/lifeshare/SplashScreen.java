@@ -18,8 +18,8 @@ import static com.ansari.lifeshare.R.anim.*;
 
 public class SplashScreen extends AppCompatActivity {
 
-    private static int SPLASH_TIMER = 5000;
-    Animation sideAnim;
+    private static int SPLASH_TIMER = 3000;
+    Animation sideAnim, bottomAnim, sideLeftAnim;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,15 +28,21 @@ public class SplashScreen extends AppCompatActivity {
 
         ImageView appImage = findViewById(id.appIcon);
         TextView appName = findViewById(id.appName);
+        TextView appTag = findViewById(id.appTag);
 
         sideAnim = AnimationUtils.loadAnimation(this, side_anim);
+        sideLeftAnim   = AnimationUtils.loadAnimation(this, left_side_anim);
+        bottomAnim = AnimationUtils.loadAnimation(this, bottom_anim);
 
         appImage.setAnimation(sideAnim);
+        appName.setAnimation(sideLeftAnim);
+        appTag.setAnimation(bottomAnim);
 
         new Handler().postDelayed(new Runnable(){
         public void run(){
             Intent intent = new Intent(SplashScreen.this, UserDashboard.class);
                     startActivity(intent);
+                    finish();
         }
         },SPLASH_TIMER);
     }
