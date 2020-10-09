@@ -11,6 +11,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ansari.lifeshare.User.UserDashboard;
+
 import static com.ansari.lifeshare.R.*;
 import static com.ansari.lifeshare.R.anim.*;
 
@@ -33,7 +35,7 @@ public class SplashScreen extends AppCompatActivity {
 
         new Handler().postDelayed(new Runnable(){
         public void run(){
-            Intent intent = new Intent(SplashScreen.this,UserDashboard.class);
+            Intent intent = new Intent(SplashScreen.this, UserDashboard.class);
                     startActivity(intent);
         }
         },SPLASH_TIMER);
