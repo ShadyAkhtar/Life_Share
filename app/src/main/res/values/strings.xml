@@ -1,3 +1,152 @@
 <resources>
     <string name="app_name">Life Share</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="home_second">Home Second</string>
+    <string name="quote">Blood donation is the real act of humanity</string>
+    <string name="Signup">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="username_hint">Username</string>
+    <string name="Passsword_hint">Password</string>
+    <string name="register_btn_txt">Register</string>
+    <string name="lifeshare_icon_img">lifeShare Icon</string>
+    <string name="login_register_btn_txt">Login/Register</string>
+    <string name="Firstname_txt">First Name</string>
+    <string name="Lastname_txt">Last Name</string>
+    <string name="Dob_txt">Date Of Birth</string>
+    <string name="Gender_txt">Gender</string>
+    <string name="male_txt">Male</string>
+    <string name="female_txt">Female</string>
+    <string name="others_txt">Others</string>
+    <string name="Phone_txt">Phone no.</string>
+    <string name="Email_txt">Email</string>
+    <string name="Address_txt">Address</string>
+    <string name="Username_txt">Username</string>
+    <string name="password_txt">Password</string>
+    <string name="ConfirmPassword_txt">Confirm Password</string>
+    <string name="requirements_by_donation_type">Requirements by Donation Type</string>
+    <string name="info_qoute">To ensure the safety of both patients and donors, these are some of the requirements donors must meet to be eligible to donate blood based on their donation type.</string>
+    <string name="common_reason">Common Reasons People Can\'t Donate !</string>
+    <string name="cold_heading">Cold, Flu and Other Types of Illness</string>
+    <string name="cold_info">If you don’t feel well on the day of your donation, please call to cancel. We’ll be happy to see you 24 hours after your symptoms pass.</string>
+    <string name="med_heading">Information About Medications</string>
+    <string name="med_info">Most medications will not disqualify you from being able to donate blood, but may require a waiting period after your final dose.</string>
+    <string name="iron_heading">Low Iron</string>
+    <string name="iron_info">If you were unable to donate due to low iron, you may still be able to donate in the future. We recommends taking steps to help increase your iron level.</string>
+    <string name="travel_heading">Travel Outside of the India</string>
+    <string name="traveling_info">You may be deferred from donating blood or platelets if you have lived in or traveled to a malaria-risk country in the past three years.</string>
+    <string name="whole_blood_heading">Whole Blood Donation</string>
+    <string name="whole_blood_info">“Whole blood” is simply the blood that flows through your veins. It contains red cells, white cells, and platelets, suspended in plasma. \n• Donation frequency: Every 56 days* \n• You must be in good health and feeling well** \n• You must be at least 16 years old in most states \n• You must weigh at least 110 lbs</string>
+    <string name="power_red_heading">Power Red Donation</string>
+    <string name="power_red_info">Power Red is similar to a whole blood donation, except a special machine is used to allow you to safely donate two units of red blood cells during one donation while returning your plasma and platelets to you. \n• Donation frequency: Every 112 days, up to 3 times/year* \n• You must be in good health and feeling well** \n• Male donors+ must be at least 17 years old in most states, at least 5.1ft tall and weigh at least 130 lbs \n• Female donors+ must be at least 19 years old, at least 5.5ft tall and weigh at least 150 lbs</string>
+    <string name="platelete_heading">Platelet Donation</string>
+    <string name="platelete_info">Platelets are tiny cells in your blood that form clots and stop bleeding. For millions of Americans, they are essential to surviving and fighting cancer, chronic diseases, and traumatic injuries. Every 15 seconds someone needs platelets. Platelets must be used within five days and new donors are needed every day.
+       \n •	Donation frequency: Every 7 days, up to 24 times/year*
+    \n•	You must be in good health and feeling well**
+    \n•	You must be at least 17 years old in most states
+    \n•	You must weigh at least 110 lbs</string>
+    <string name="elite_heading">AB Elite Plasma Donation</string>
+    <string name="elite_info">During a plasma-only donation, blood is drawn from one arm and sent through a high-tech machine that collects your plasma and then safely and comfortably returns your red cells and platelets back to you, along with some saline. It takes only a few minutes longer than donating blood but can have a profound impact.
+    Donors with type AB blood make ideal candidates for AB Elite plasma or platelet donations.
+
+    \n•	Donation frequency: Every 28 days, up to 13 times/year*
+    \n•	You must have type AB blood
+    \n•	You must be in good health and feeling well**
+    \n•	You must be at least 17 years old
+    \n•	You must weigh at least 110 lbs</string>
+    <string name="process">How does the blood donation process work?</string>
+    <string name="process_info">Donating blood is a simple thing to do, but can make a big difference in the lives of others.
+        The donation process from the time you arrive until the time you leave takes about an hour.
+        The donation itself is only about 8-10 minutes on average. The steps in the process are:
+\nRegistration
+\n1.	You will complete donor registration, which includes information such as your name, address, phone number, and donor identification number (if you have one).
+\n2.	You will be asked to show a donor card, driver’s license or two other forms of ID.
+\nHealth History and Mini Physical
+\n1.	You will answer some questions during a private and confidential interview about your health history and the places you have traveled.
+\n2.	You will have your temperature, hemoglobin, blood pressure and pulse checked.
+\nDonation
+\n1.	We will cleanse an area on your arm and insert a brand–new, sterile needle for the blood draw. This feels like a quick pinch and is over in seconds.
+\n2.	You will have some time to relax while the bag is filling. (For a whole blood donation, it is about 8-10 minutes. If you are donating platelets, red cells or plasma by apheresis the collection can take up to 2 hours.)
+\n3.	When approximately a pint of blood has been collected, the donation is complete and a staff person will place a bandage on your arm.
+\nRefreshments
+\n1.	You will spend a few minutes enjoying refreshments to allow your body time to adjust to the slight decrease in fluid volume.
+\n2.	After 10-15 minutes you can then leave the donation site and continue with your normal daily activities.
+\n3.	Enjoy the feeling of accomplishment knowing that you have helped to save lives.
+\nYour gift of blood may help up to three people. Donated red blood cells do not last forever. They have a shelf-life of up to 42 days.
+        A healthy donor may donate every 56 days.</string>
+    <string name="after_donating">What should I do after donating blood?</string>
+    <string name="after_donating_info">After you give blood:
+\nTake the following precautions:
+\nDrink an extra four glasses (eight ounces each) of non-alcoholic liquids.
+\nKeep your bandage on and dry for the next five hours, and do not do heavy exercising or lifting.
+\nIf the needle site starts to bleed, raise your arm straight up and press on the site until the bleeding stops.
+\nBecause you could experience dizziness or loss of strength, use caution if you plan to do anything that could put you or others at risk of harm.
+        For any hazardous occupation or hobby, follow applicable safety recommendations regarding your return to these activities following a blood donation.
+\nEat healthy meals and consider adding iron-rich foods to your regular diet, or discuss taking an iron supplement with your health care provider, to replace the iron lost with blood donation.
+\nIf you get a bruise:  Apply ice to the area intermittently for 10-15 minutes during the first 24 hours.
+        Thereafter, apply warm, moist heat to the area intermittently for 10-15 minutes. A rainbow of colors may occur for about 10 days.
+\nIf you get dizzy or lightheaded:  Stop what you are doing, lie down, and raise your feet until the feeling passes and you feel well enough to safely resume activities.
+\nAnd remember to enjoy the feeling of knowing you have helped save lives!
+\nSchedule your next appointment.</string>
+    <string name="hurt">Will it hurt when you insert the needle?</string>
+    <string name="hurt_info">Only for a moment. Pinch the fleshy, soft underside of your arm.
+        That pinch is similar to what you will feel when the needle is inserted.</string>
+    <string name="time">How long does a blood donation take?</string>
+    <string name="time_info">The entire process takes about one hour and 15 minutes; the actual donation of a pint of whole blood unit takes
+        8 to 10 minutes. However, the time varies slightly with each person depending on several factors including the
+        donor’s health history and attendance at the blood drive.</string>
+    <string name="often">How often can I donate blood?</string>
+    <string name="often_info">You must wait at least eight weeks (56 days) between donations of whole blood and 16 weeks (112 days) between Power Red donations.
+        Platelet apheresis donors may give every 7 days up to 24 times per year.
+        Regulations are different for those giving blood for themselves (autologous donors).</string>
+    <string name="who_can">Who can donate blood?</string>
+    <string name="who_can_info">In most states, donors must be age 17 or older.
+        Some states allow donation by 16-year-olds with a signed parental consent form.
+        Donors must weigh at least 110 pounds and be in good health. Additional eligibility criteria apply.</string>
+    <string name="eligibility">ELIGIBILITY:</string>
+    <string name="eligibility_info">Medications
+In almost all cases, medications will not disqualify you as a blood donor.
+        Your eligibility will be based on the reason that the medication was prescribed.
+        As long as the condition is under control and you are healthy, blood donation is usually permitted.
+\nOver-the-counter oral homeopathic medications, herbal remedies, and nutritional supplements are acceptable.
+        There are a handful of drugs that are of special significance in blood donation.
+        Persons on these drugs have waiting periods following their last dose before they can donate blood:
+\n•	Accutane, Amnesteem, Absorica, Claravis, Myorisan, Sotret or Zenatane (isotretinoin), Proscar (finasteride), and Propecia (finasteride) - wait 1 month from the last dose.
+\n•	Avodart or Jalyn (dutasteride) - wait 6 months from the last dose.
+\n•	Aspirin, no waiting period for donating whole blood.
+        However, you must wait 2 full days after taking aspirin or any medication containing aspirin before donating platelets by apheresis.
+        For example, if you take aspirin products on Monday, the soonest you may donate platelets is Thursday.
+\n•	Effient (prasugrel)  and Brilinta (ticagrelor)- no waiting period for donating whole blood. However you must wait 7 days after taking Brilinta (ticagrelor) before donating platelets by apheresis.
+        You must wait 3 days after taking Effient (prasugrel) before donating platelets by apheresis.
+\n•	Feldene (piroxicam), no waiting period for donating whole blood.
+        However, you must wait 2 days after taking Feldene (piroxicam) before donating platelets by apheresis.
+\n•	Coumadin, Warfilone, Jantoven (warfarin) and Heparin, are prescription blood thinners-
+        you should not donate since your blood will not clot normally.
+        If your doctor discontinues your treatment with blood thinners, wait 7 days before returning to donate.
+\n•	Arixtra (fondaparinux), Fragmin (dalteparin), Eliquis (apixaban), Pradaxa (dabigatran),Savaysa (edoxaban), Xarelto (rivaroxaban),and Lovenox (enoxaparin) are also prescription blood thinners- you should not donate since your blood will not clot normally.
+        If your doctor discontinues your treatment with these blood thinners, wait 2 days before returning to donate.
+\n•	Other prescription blood thinners not listed, call 866-236-3276 to speak with an eligibility specialist about your individual situation.
+\n•	Hepatitis B Immune Globulin – given for exposure to hepatitis, wait 12 months after exposure to hepatitis.
+\n•	HIV Prevention (PrEP and PEP) medications - Truvada (Tenofovir), Descovy (emtricitabine), Tivicay (dolutegravir) and  Isentress (raltegravir)
+        are given for exposure to HIV, you must wait 3 months after the last dose of medication to donate.
+\n•	HIV treatment also known as antiretroviral therapy (ART) at any time - you are not eligible to donate blood.
+\n•	Plavix (clopidogrel) and Ticlid (ticlopidine) – no waiting period for donating whole blood. However,
+        you must wait 14 days after taking this medication before donating platelets by apheresis.
+\n•	Zontivity (vorapaxar) – no waiting period for donating whole blood. However,
+        you must wait 1 month after taking this medication before donating platelets by apheresis.
+\n•	Rinvoq (upadacitinib) – wait 1 month
+\n•	Thalomid (thalidomide) – wait 1 month.
+\n•	Cellcept (mycophenolate mofetil) – an immunosuppressant – wait 6 weeks
+\n•	Soriatane (acitretin) – wait 3 years.
+\n•	Tegison (etretinate) at any time – you are not eligible to donate blood.</string>
+
 </resources>
