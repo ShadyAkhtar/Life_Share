@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/gallery"
+            android:title="@string/menu_gallery" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/nav_signin"
+            android:title="@string/sign_in"
+            android:icon="@drawable/sign_in"
+            />
+        <item
+            android:id="@+id/nav_signup"
+            android:title="@string/Signup"
+            android:icon="@drawable/register"
+            />
+        <item
+            android:id="@+id/nav_info"
+            android:title="Learn About Blood!"
+            android:icon="@drawable/info"
+            />
+        <item
+            android:id="@+id/nav_example"
+            android:title="Example"
+            android:icon="@drawable/info"
+            />
+
+    </group>
+</menu>

@@ -1,10 +1,13 @@
 package com.ansari.lifeshare;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.MenuItem;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -12,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ansari.lifeshare.User.UserDashboard;
+import com.google.android.material.navigation.NavigationView;
 
 import static com.ansari.lifeshare.R.*;
 import static com.ansari.lifeshare.R.anim.*;
@@ -20,12 +24,15 @@ public class SplashScreen extends AppCompatActivity {
 
     private static int SPLASH_TIMER = 3000;
     Animation sideAnim, bottomAnim, sideLeftAnim;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(layout.splash_screen);
 
+        //animation
         ImageView appImage = findViewById(id.appIcon);
         TextView appName = findViewById(id.appName);
         TextView appTag = findViewById(id.appTag);
