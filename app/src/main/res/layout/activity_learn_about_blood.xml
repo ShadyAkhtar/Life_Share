@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LearnAboutBlood"
+    tools:openDrawer="start"
+    android:id="@+id/drawer_layout">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bannerBackground"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/menu_header"
+        app:menu="@menu/main_menu"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:background="@color/bannerBackground">
+
+        <ImageView
+            android:id="@+id/menu_icon"
+            android:layout_centerVertical="true"
+            android:layout_height="30dp"
+            android:layout_width="30dp"
+            android:src="@drawable/ic_humberger_menu" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+
+            android:layout_centerVertical="true"
+
+            android:padding="5dp"
+            android:src="@drawable/ic_more"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/backgroundColor">
+
+        <TextView
+            android:id="@+id/txtInform"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="5dp"
+            android:text="@string/requirements_by_donation_type"
+            android:textAlignment="center"
+            android:textColor="#6C0505"
+            android:textSize="30sp"
+            app:fontFamily="@font/acme"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:text="@string/info_qoute"
+            android:textAlignment="center"
+            android:textColor="#051863"
+            android:textSize="18sp"
+            app:fontFamily="@font/acme"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:text="@string/common_reason"
+            android:textAlignment="center"
+            android:textColor="#BC0B11"
+            android:textSize="20sp"
+            app:fontFamily="@font/acme"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/cold_heading"
+            android:elevation="5dp"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            app:fontFamily="@font/alegreya_sans_medium_italic" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/cold_info"
+            android:textColor="#221F1F"
+            android:textSize="18sp"
+            app:fontFamily="@font/alegreya_sans_medium" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/med_heading"
+            android:textColor="#000000"
+            android:elevation="5dp"
+            android:textSize="22sp"
+            app:fontFamily="@font/alegreya_sans_medium_italic" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/med_info"
+            android:textColor="#221F1F"
+            android:textSize="18sp"
+            app:fontFamily="@font/alegreya_sans_medium" />
+
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/iron_heading"
+            android:textColor="#000000"
+            android:elevation="5dp"
+            android:textSize="22sp"
+            app:fontFamily="@font/alegreya_sans_medium_italic" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/iron_info"
+            android:textColor="#221F1F"
+            android:textSize="18sp"
+            app:fontFamily="@font/alegreya_sans_medium" />
+
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:elevation="5dp"
+            android:padding="3dp"
+            android:text="@string/travel_heading"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            app:fontFamily="@font/alegreya_sans_medium_italic" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/traveling_info"
+            android:textColor="#221F1F"
+            android:textSize="18sp"
+            app:fontFamily="@font/alegreya_sans_medium" />
+        <com.ms.square.android.expandabletextview.ExpandableTextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/expand_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            expandableTextView:maxCollapsedLines="4"
+            expandableTextView:animDuration="200">
+            <TextView
+                android:id="@id/expandable_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="#666666" />
+            <ImageButton
+                android:id="@id/expand_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_gravity="right|bottom"
+                android:background="@android:color/transparent"/>
+        </com.ms.square.android.expandabletextview.ExpandableTextView>
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/whole_blood_heading"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            app:fontFamily="@font/alegreya_sans_medium_italic" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/whole_blood_info"
+            android:textColor="#221F1F"
+            android:textSize="18sp"
+            app:fontFamily="@font/alegreya_sans_medium" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/power_red_heading"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            app:fontFamily="@font/alegreya_sans_medium_italic" />
+
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/power_red_info"
+            android:textColor="#221F1F"
+            android:textSize="18sp"
+            app:fontFamily="@font/alegreya_sans_medium" />
+
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
