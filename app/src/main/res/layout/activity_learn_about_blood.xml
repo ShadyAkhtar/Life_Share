@@ -78,16 +78,16 @@
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:gravity="center_horizontal"
             android:padding="5dp"
             android:text="@string/info_qoute"
             android:textAlignment="center"
             android:textColor="#051863"
             android:textSize="18sp"
-            app:fontFamily="@font/acme"
-            android:gravity="center_horizontal"
-            android:layout_gravity="center_horizontal" />
+            app:fontFamily="@font/acme" />
 
         <TextView
             android:id="@+id/textView6"
@@ -115,7 +115,7 @@
             android:text="@string/cold_heading"
             android:elevation="5dp"
             android:textColor="#000000"
-            android:textSize="22sp"
+            android:textSize="24sp"
             app:fontFamily="@font/alegreya_sans_medium_italic" />
 
         <TextView
@@ -142,7 +142,7 @@
             android:text="@string/med_heading"
             android:textColor="#000000"
             android:elevation="5dp"
-            android:textSize="22sp"
+            android:textSize="24sp"
             app:fontFamily="@font/alegreya_sans_medium_italic" />
 
         <TextView
@@ -170,7 +170,7 @@
             android:text="@string/iron_heading"
             android:textColor="#000000"
             android:elevation="5dp"
-            android:textSize="22sp"
+            android:textSize="24sp"
             app:fontFamily="@font/alegreya_sans_medium_italic" />
 
         <TextView
@@ -198,7 +198,7 @@
             android:padding="3dp"
             android:text="@string/travel_heading"
             android:textColor="#000000"
-            android:textSize="22sp"
+            android:textSize="24sp"
             app:fontFamily="@font/alegreya_sans_medium_italic" />
 
         <TextView
@@ -213,30 +213,7 @@
             android:textColor="#221F1F"
             android:textSize="18sp"
             app:fontFamily="@font/alegreya_sans_medium" />
-        <com.ms.square.android.expandabletextview.ExpandableTextView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/expand_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            expandableTextView:maxCollapsedLines="4"
-            expandableTextView:animDuration="200">
-            <TextView
-                android:id="@id/expandable_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:textSize="16sp"
-                android:textColor="#666666" />
-            <ImageButton
-                android:id="@id/expand_collapse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:layout_gravity="right|bottom"
-                android:background="@android:color/transparent"/>
-        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
         <TextView
             android:id="@+id/textView15"
             android:layout_width="match_parent"
@@ -247,7 +224,7 @@
             android:padding="3dp"
             android:text="@string/whole_blood_heading"
             android:textColor="#000000"
-            android:textSize="22sp"
+            android:textSize="24sp"
             app:fontFamily="@font/alegreya_sans_medium_italic" />
 
         <TextView
@@ -273,7 +250,7 @@
             android:padding="3dp"
             android:text="@string/power_red_heading"
             android:textColor="#000000"
-            android:textSize="22sp"
+            android:textSize="24sp"
             app:fontFamily="@font/alegreya_sans_medium_italic" />
 
 
@@ -289,6 +266,301 @@
             android:textColor="#221F1F"
             android:textSize="18sp"
             app:fontFamily="@font/alegreya_sans_medium" />
+
+        <TextView
+            android:id="@+id/process"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/process"
+            android:elevation="5dp"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:fontFamily="@font/alegreya_sans_medium_italic" />
+
+        <com.ms.square.android.expandabletextview.ExpandableTextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/expand_process_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            expandableTextView:maxCollapsedLines="2"
+            expandableTextView:animDuration="200">
+            <TextView
+                android:id="@id/expandable_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#221F1F"
+                android:textSize="18sp"
+                app:fontFamily="@font/alegreya_sans_medium" />
+            <ImageButton
+                android:id="@id/expand_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_gravity="right|bottom"
+                android:background="@android:color/transparent"/>
+        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+        <TextView
+            android:id="@+id/after_donating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/after_donating"
+            android:elevation="5dp"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:fontFamily="@font/alegreya_sans_medium_italic" />
+
+        <com.ms.square.android.expandabletextview.ExpandableTextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/expand_after_donating_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            expandableTextView:maxCollapsedLines="2"
+            expandableTextView:animDuration="200">
+            <TextView
+                android:id="@id/expandable_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#221F1F"
+                android:textSize="18sp"
+                app:fontFamily="@font/alegreya_sans_medium" />
+            <ImageButton
+                android:id="@id/expand_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_gravity="right|bottom"
+                android:background="@android:color/transparent"/>
+        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+        <TextView
+            android:id="@+id/hurt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/hurt"
+            android:elevation="5dp"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:fontFamily="@font/alegreya_sans_medium_italic" />
+
+        <com.ms.square.android.expandabletextview.ExpandableTextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/expand_hurt_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            expandableTextView:maxCollapsedLines="2"
+            expandableTextView:animDuration="200">
+            <TextView
+                android:id="@id/expandable_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#221F1F"
+                android:textSize="18sp"
+                app:fontFamily="@font/alegreya_sans_medium" />
+            <ImageButton
+                android:id="@id/expand_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_gravity="right|bottom"
+                android:background="@android:color/transparent"/>
+        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/time"
+            android:elevation="5dp"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:fontFamily="@font/alegreya_sans_medium_italic" />
+
+        <com.ms.square.android.expandabletextview.ExpandableTextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/expand_time_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            expandableTextView:maxCollapsedLines="2"
+            expandableTextView:animDuration="200">
+            <TextView
+                android:id="@id/expandable_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#221F1F"
+                android:textSize="18sp"
+                app:fontFamily="@font/alegreya_sans_medium" />
+            <ImageButton
+                android:id="@id/expand_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_gravity="right|bottom"
+                android:background="@android:color/transparent"/>
+        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+        <TextView
+            android:id="@+id/often"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/often"
+            android:elevation="5dp"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:fontFamily="@font/alegreya_sans_medium_italic" />
+
+        <com.ms.square.android.expandabletextview.ExpandableTextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/expand_often_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            expandableTextView:maxCollapsedLines="2"
+            expandableTextView:animDuration="200">
+            <TextView
+                android:id="@id/expandable_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#221F1F"
+                android:textSize="18sp"
+                app:fontFamily="@font/alegreya_sans_medium" />
+            <ImageButton
+                android:id="@id/expand_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_gravity="right|bottom"
+                android:background="@android:color/transparent"/>
+        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+        <TextView
+            android:id="@+id/who_can"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/who_can"
+            android:elevation="5dp"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:fontFamily="@font/alegreya_sans_medium_italic" />
+
+        <com.ms.square.android.expandabletextview.ExpandableTextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/expand_who_can_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            expandableTextView:maxCollapsedLines="2"
+            expandableTextView:animDuration="200">
+            <TextView
+                android:id="@id/expandable_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#221F1F"
+                android:textSize="18sp"
+                app:fontFamily="@font/alegreya_sans_medium" />
+            <ImageButton
+                android:id="@id/expand_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_gravity="right|bottom"
+                android:background="@android:color/transparent"/>
+        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+
+        <TextView
+            android:id="@+id/eligibility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="3dp"
+            android:text="@string/eligibility"
+            android:elevation="5dp"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:fontFamily="@font/alegreya_sans_medium_italic" />
+
+        <com.ms.square.android.expandabletextview.ExpandableTextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/expand_eligibility_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            expandableTextView:maxCollapsedLines="2"
+            expandableTextView:animDuration="200">
+            <TextView
+                android:id="@id/expandable_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#221F1F"
+                android:textSize="18sp"
+                app:fontFamily="@font/alegreya_sans_medium" />
+            <ImageButton
+                android:id="@id/expand_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_gravity="right|bottom"
+                android:background="@android:color/transparent"/>
+        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+
+
+
+
+
+
 
     </LinearLayout>
 </ScrollView>
