@@ -9,7 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.ansari.lifeshare.LearnAboutBlood;
 import com.ansari.lifeshare.R;
@@ -25,6 +27,10 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ImageView menuIcon;
+    Button btnSignIn;
+
+    static final float END_SCALE = 0.7f;
+    LinearLayout contentView;
 
 
     @Override
@@ -37,10 +43,28 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         navigationView = findViewById(id.navigation_view);
         menuIcon = findViewById(id.menu_icon);
 
+        btnSignIn = findViewById(id.btnSignIn);
+
+        contentView = findViewById(id.contentView);
+
         navigationView.setItemIconTintList(null);
+
+        signIn();
 
         navigationDrawer();
 
+        animateNavigationDrawer();
+
+    }
+
+    private void signIn() {
+        btnSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserDashboard.this,SignIn.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void navigationDrawer() {
@@ -73,23 +97,48 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
                 break;
 
             case id.nav_signin:
-                Intent intent = new Intent(UserDashboard.this, SignIn.class);
-                startActivity(intent);
+                Intent intent_signin = new Intent(UserDashboard.this, SignIn.class);
+                startActivity(intent_signin);
                 break;
 
             case id.nav_signup:
 
-                Intent intent1 = new Intent(UserDashboard.this, SignUp.class);
-                startActivity(intent1);
+                Intent intent_signup = new Intent(UserDashboard.this, SignUp.class);
+                startActivity(intent_signup);
 //                menu.findItem(id.nav_signup).setVisible(false);
                 break;
 
             case id.nav_info:
-                Intent intent2 = new Intent(UserDashboard.this, LearnAboutBlood.class);
-                startActivity(intent2);
+                Intent intent_info = new Intent(UserDashboard.this, LearnAboutBlood.class);
+                startActivity(intent_info);
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void animateNavigationDrawer() {
+
+        //Add any color or remove it to use the default one!
+        //To make it transparent use Color.Transparent in side setScrimColor();
+        //drawerLayout.setScrimColor(Color.TRANSPARENT);
+        drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+
+                // Scale the View based on current slide offset
+                final float diffScaledOffset = slideOffset * (1 - END_SCALE);
+                final float offsetScale = 1 - diffScaledOffset;
+                contentView.setScaleX(offsetScale);
+                contentView.setScaleY(offsetScale);
+
+                // Translate the View, accounting for the scaled width
+                final float xOffset = drawerView.getWidth() * slideOffset;
+                final float xOffsetDiff = contentView.getWidth() * diffScaledOffset / 2;
+                final float xTranslation = xOffset - xOffsetDiff;
+                contentView.setTranslationX(xTranslation);
+            }
+        });
+
     }
 }

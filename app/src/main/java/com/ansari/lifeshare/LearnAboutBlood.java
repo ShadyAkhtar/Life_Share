@@ -71,7 +71,7 @@ public class LearnAboutBlood extends AppCompatActivity implements NavigationView
         //navigation drawer
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_home);
+        navigationView.setCheckedItem(R.id.nav_info);
 
         menuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,23 +94,23 @@ public class LearnAboutBlood extends AppCompatActivity implements NavigationView
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.nav_home:
+                Intent intent_home = new Intent(LearnAboutBlood.this, UserDashboard.class);
+                startActivity(intent_home);
                 break;
 
             case R.id.nav_signin:
-                Intent intent = new Intent(LearnAboutBlood.this, SignIn.class);
-                startActivity(intent);
+                Intent intent_signin = new Intent(LearnAboutBlood.this, SignIn.class);
+                startActivity(intent_signin);
                 break;
 
             case R.id.nav_signup:
 
-                Intent intent1 = new Intent(LearnAboutBlood.this, SignUp.class);
-                startActivity(intent1);
+                Intent intent_signup = new Intent(LearnAboutBlood.this, SignUp.class);
+                startActivity(intent_signup);
 //                menu.findItem(id.nav_signup).setVisible(false);
                 break;
 
             case R.id.nav_info:
-                Intent intent2 = new Intent(LearnAboutBlood.this, LearnAboutBlood.class);
-                startActivity(intent2);
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

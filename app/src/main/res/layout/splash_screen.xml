@@ -55,7 +55,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="50dp"
             android:fontFamily="@font/acme"
-            android:text="Tagline Khoon dena zaruri hai"
-            android:textSize="18sp" />
+            android:text="Every Donor is a Life saver"
+            android:textSize="22sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
