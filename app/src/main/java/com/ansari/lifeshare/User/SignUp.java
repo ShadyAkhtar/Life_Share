@@ -1,8 +1,10 @@
-package com.ansari.lifeshare;
+package com.ansari.lifeshare.User;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.ansari.lifeshare.R;
 
 public class SignUp extends AppCompatActivity {
 

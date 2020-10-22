@@ -1,13 +1,10 @@
-package com.ansari.lifeshare;
+package com.ansari.lifeshare.Common;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.MenuItem;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -15,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ansari.lifeshare.User.UserDashboard;
-import com.google.android.material.navigation.NavigationView;
 
 import static com.ansari.lifeshare.R.*;
 import static com.ansari.lifeshare.R.anim.*;

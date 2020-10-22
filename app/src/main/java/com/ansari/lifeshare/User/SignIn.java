@@ -1,4 +1,4 @@
-package com.ansari.lifeshare;
+package com.ansari.lifeshare.User;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.ansari.lifeshare.User.UserDashboard;
+import com.ansari.lifeshare.R;
 
 public class SignIn extends AppCompatActivity {
 
@@ -39,7 +39,7 @@ public class SignIn extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignIn.this,SignUp.class);
+                Intent intent = new Intent(SignIn.this, SignUp.class);
                 startActivity(intent);
             }
         });

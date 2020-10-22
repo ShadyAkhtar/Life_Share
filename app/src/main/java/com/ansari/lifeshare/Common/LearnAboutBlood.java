@@ -1,4 +1,4 @@
-package com.ansari.lifeshare;
+package com.ansari.lifeshare.Common;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.ansari.lifeshare.R;
+import com.ansari.lifeshare.User.SignIn;
+import com.ansari.lifeshare.User.SignUp;
 import com.ansari.lifeshare.User.UserDashboard;
 import com.google.android.material.navigation.NavigationView;
 import com.ms.square.android.expandabletextview.ExpandableTextView;

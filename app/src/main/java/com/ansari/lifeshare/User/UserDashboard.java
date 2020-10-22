@@ -13,10 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.ansari.lifeshare.LearnAboutBlood;
-import com.ansari.lifeshare.R;
-import com.ansari.lifeshare.SignIn;
-import com.ansari.lifeshare.SignUp;
+import com.ansari.lifeshare.Common.LearnAboutBlood;
 import com.google.android.material.navigation.NavigationView;
 
 import static com.ansari.lifeshare.R.*;

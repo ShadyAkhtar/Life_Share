@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LearnAboutBlood"></activity>
-        <activity android:name=".SignUp" />
-        <activity android:name=".SignIn" />
+        <activity android:name=".Common.LearnAboutBlood"></activity>
+        <activity android:name=".User.SignUp" />
+        <activity android:name=".User.SignIn" />
         <activity android:name=".User.UserDashboard" />
-        <activity android:name=".SplashScreen">
+        <activity android:name=".Common.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
