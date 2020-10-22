@@ -9,6 +9,19 @@
             android:id="@+id/nav_gallery"
             android:icon="@drawable/gallery"
             android:title="@string/menu_gallery" />
+
+        <item
+            android:id="@+id/nav_info"
+            android:title="Learn About Blood!"
+            android:icon="@drawable/info"
+            />
+
+        <item
+            android:id="@+id/nav_compatibility"
+            android:title="Blood Compatibility"
+            android:icon="@drawable/info"
+            />
+
         <item
             android:id="@+id/nav_signin"
             android:title="@string/sign_in"
@@ -18,16 +31,6 @@
             android:id="@+id/nav_signup"
             android:title="@string/Signup"
             android:icon="@drawable/register"
-            />
-        <item
-            android:id="@+id/nav_info"
-            android:title="Learn About Blood!"
-            android:icon="@drawable/info"
-            />
-        <item
-            android:id="@+id/nav_example"
-            android:title="Example"
-            android:icon="@drawable/info"
             />
 
     </group>

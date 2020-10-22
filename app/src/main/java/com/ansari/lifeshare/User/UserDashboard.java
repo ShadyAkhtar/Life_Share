@@ -13,7 +13,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.ansari.lifeshare.BloodCompatibility;
 import com.ansari.lifeshare.Common.LearnAboutBlood;
+import com.ansari.lifeshare.R;
 import com.google.android.material.navigation.NavigationView;
 
 import static com.ansari.lifeshare.R.*;
@@ -108,6 +110,13 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
             case id.nav_info:
                 Intent intent_info = new Intent(UserDashboard.this, LearnAboutBlood.class);
                 startActivity(intent_info);
+                break;
+
+
+            case id.nav_compatibility:
+
+                Intent intent_compatibility = new Intent(UserDashboard.this, BloodCompatibility.class);
+                startActivity(intent_compatibility);
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
