@@ -543,6 +543,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginBottom="25dp"
                 android:textColor="#221F1F"
                 android:textSize="18sp"
                 app:fontFamily="@font/alegreya_sans_medium" />

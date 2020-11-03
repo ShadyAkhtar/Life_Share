@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,8 +17,12 @@ import android.widget.LinearLayout;
 
 import com.ansari.lifeshare.BloodCompatibility;
 import com.ansari.lifeshare.Common.LearnAboutBlood;
+import com.ansari.lifeshare.HelperClasses.HomeAdapter.FeaturedAdapter;
+import com.ansari.lifeshare.HelperClasses.HomeAdapter.FeaturedHelperClass;
 import com.ansari.lifeshare.R;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 import static com.ansari.lifeshare.R.*;
 
@@ -27,6 +33,8 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     NavigationView navigationView;
     ImageView menuIcon;
     Button btnSignIn;
+    RecyclerView featuredRecycler;
+    RecyclerView.Adapter adapter;
 
     static final float END_SCALE = 0.7f;
     LinearLayout contentView;
@@ -36,6 +44,10 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_user_dashboard);
+
+        //Recycler View
+        featuredRecycler = findViewById(id.featured_recycler);
+        featuredRecycler();
 
         //menu
         drawerLayout = findViewById(id.drawer_layout);
@@ -54,6 +66,24 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
         animateNavigationDrawer();
 
+    }
+
+    private void featuredRecycler() {
+        featuredRecycler.setHasFixedSize(true);
+        featuredRecycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+
+        ArrayList<FeaturedHelperClass> featuredLocations = new ArrayList<>();
+
+        featuredLocations.add(new FeaturedHelperClass(drawable.abdullah, "MOSHIN PATHAN", "I am a rare blood Type (B-). This is what encouraged me to donate.with knowing I’m helping someone with an uncommon blood type is the reason I’ll be donating again in September.\n" +
+                "Please donate blood , you’ll feel silly for avoiding it if you were afraid in the first place !"));
+        featuredLocations.add(new FeaturedHelperClass(drawable.zeeshan, "ZAID SHAIKH", "Its just a feeling of doing good for the world.\n" +
+                "The blood we donate is going to help someone in need now or in the future so doing such a good deed feels fulfilling and happy at the same time"));
+        featuredLocations.add(new FeaturedHelperClass(drawable.zeeshan,"AISHAH ANSARI", "I felt good emotionally after donating blood because i know i have helped someone else who may be ill."));
+        featuredLocations.add(new FeaturedHelperClass(drawable.profile,"SHADAB ANSARI", "I am happy and excited to donate my blood. :) hope we all would donate it in the future... Donate Krke dkho,acha lagta h!"));
+        featuredLocations.add(new FeaturedHelperClass(drawable.zeeshan, "SADIQ SONALKAR", "After donating blood i really felt like that I have made a contribution to the world. Some really needy people may have blood to live again."));
+
+        adapter = new FeaturedAdapter(featuredLocations);
+        featuredRecycler.setAdapter(adapter);
     }
 
     private void signIn() {

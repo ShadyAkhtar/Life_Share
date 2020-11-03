@@ -140,22 +140,37 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
 
-                android:layout_marginBottom="30dp"
                 android:fontFamily="@font/alegreya_sans_medium"
                 android:text="In most states, donors must be age 17 or older.
         Some states allow donation by 16-year-olds with a signed parental consent form.
         Donors must weigh at least 110 pounds and be in good health. Additional eligibility criteria apply."
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtBasicMotiveHead" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/featured_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtBasicMotive"
+
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
