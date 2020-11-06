@@ -147,7 +147,7 @@
     </string>
     <string name="msg1"> I am a rare blood Type (B-). This is what encouraged me to donate.with knowing I’m helping someone with an uncommon blood type is the reason I’ll be donating again in September.
 Please donate blood , you’ll feel silly for avoiding it if you were afraid in the first place !</string>
-   <string name="msg2">Its just a feeling of doing good for the world.
+    <string name="msg2">Its just a feeling of doing good for the world.
 The blood we donate is going to help someone in need now or in the future so doing such a good deed feels fulfilling and happy at the same time </string>
     <string name="msg3">I felt good emotionally after donating blood because i know i have helped someone else who may be ill. </string>
     <string name="msg5">After donating blood i really felt like that I have made a contribution to the world. Some really needy people may have blood to live again. </string>
@@ -157,7 +157,6 @@ The blood we donate is going to help someone in need now or in the future so doi
     <string name="donor3">AISHAH ANSARI</string>
     <string name="donor4">SHADAB ANSARI</string>
     <string name="donor5">SADIQ SONALKAR</string>
-
 
 
 </resources>

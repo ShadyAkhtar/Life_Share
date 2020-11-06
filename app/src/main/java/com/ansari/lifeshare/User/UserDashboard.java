@@ -74,13 +74,11 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
         ArrayList<FeaturedHelperClass> featuredLocations = new ArrayList<>();
 
-        featuredLocations.add(new FeaturedHelperClass(drawable.abdullah, "MOSHIN PATHAN", "I am a rare blood Type (B-). This is what encouraged me to donate.with knowing I’m helping someone with an uncommon blood type is the reason I’ll be donating again in September.\n" +
-                "Please donate blood , you’ll feel silly for avoiding it if you were afraid in the first place !"));
-        featuredLocations.add(new FeaturedHelperClass(drawable.zeeshan, "ZAID SHAIKH", "Its just a feeling of doing good for the world.\n" +
-                "The blood we donate is going to help someone in need now or in the future so doing such a good deed feels fulfilling and happy at the same time"));
-        featuredLocations.add(new FeaturedHelperClass(drawable.zeeshan,"AISHAH ANSARI", "I felt good emotionally after donating blood because i know i have helped someone else who may be ill."));
-        featuredLocations.add(new FeaturedHelperClass(drawable.profile,"SHADAB ANSARI", "I am happy and excited to donate my blood. :) hope we all would donate it in the future... Donate Krke dkho,acha lagta h!"));
-        featuredLocations.add(new FeaturedHelperClass(drawable.zeeshan, "SADIQ SONALKAR", "After donating blood i really felt like that I have made a contribution to the world. Some really needy people may have blood to live again."));
+        featuredLocations.add(new FeaturedHelperClass(drawable.abdullah, getString(string.donor1), getString(string.msg1)));
+        featuredLocations.add(new FeaturedHelperClass(drawable.zeeshan, getString(string.donor2), getString(string.msg2)));
+        featuredLocations.add(new FeaturedHelperClass(drawable.zeeshan,getString(string.donor3), getString(string.msg3)));
+        featuredLocations.add(new FeaturedHelperClass(drawable.profile,getString(string.donor4), getString(string.msg4)));
+        featuredLocations.add(new FeaturedHelperClass(drawable.zeeshan, getString(string.donor5), getString(string.msg5)));
 
         adapter = new FeaturedAdapter(featuredLocations);
         featuredRecycler.setAdapter(adapter);

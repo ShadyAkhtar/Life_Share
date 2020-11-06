@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BloodCompatibility"></activity>
+        <activity android:name=".Common.LoginSignup.VerifyOTP"></activity>
+        <activity android:name=".Common.LoginSignup.MainActivity" />
+        <activity android:name=".BloodCompatibility" />
         <activity android:name=".Common.LearnAboutBlood" />
         <activity android:name=".User.SignUp" />
         <activity android:name=".User.SignIn" />
