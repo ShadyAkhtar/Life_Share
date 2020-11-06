@@ -138,13 +138,9 @@
         \nPlease do not register as a blood donor or donate blood in case
         \n1.You are HIV+.
         \n2.You are suffering, or had history of cancer.
-        \n3.You are suffering from any blood clotting disorder, such as haemophilia.
+        \n3.You are suffering from any blood clotting disorder, such as haemophilia.</string>
 
-
-
-
-
-    </string>
+    <!--donor msg-->
     <string name="msg1"> I am a rare blood Type (B-). This is what encouraged me to donate.with knowing I’m helping someone with an uncommon blood type is the reason I’ll be donating again in September.
 Please donate blood , you’ll feel silly for avoiding it if you were afraid in the first place !</string>
     <string name="msg2">Its just a feeling of doing good for the world.
@@ -157,6 +153,14 @@ The blood we donate is going to help someone in need now or in the future so doi
     <string name="donor3">AISHAH ANSARI</string>
     <string name="donor4">SHADAB ANSARI</string>
     <string name="donor5">SADIQ SONALKAR</string>
+
+
+
+    <!--otp screen-->
+    <string name="otp_code_text">co\nde</string>
+    <string name="otp_verification_text">verification</string>
+    <string name="otp_description_text">Enter one time password sent on\n 9958623147</string>
+    <string name="verify_code">VERIFY CODE</string>
 
 
 </resources>

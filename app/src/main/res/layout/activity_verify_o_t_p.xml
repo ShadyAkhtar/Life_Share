@@ -19,31 +19,30 @@
             android:onClick="goToHomeFromOTP"
             android:padding="5dp"
             android:src="@drawable/ic_close"
-            android:tint="@color/black"
-            android:contentDescription="@string/todo" />
+            app:tint="@android:color/black"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/muli_black"
+            android:fontFamily="@font/acme"
             android:includeFontPadding="false"
             android:text="@string/otp_code_text"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="@color/black"
+            android:textColor="@android:color/black"
             android:textSize="100sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/muli_black"
+            android:fontFamily="@font/acme"
             android:includeFontPadding="false"
             android:text="@string/otp_verification_text"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="@color/black"
+            android:textColor="@android:color/black"
             android:textSize="24sp" />
 
 
@@ -53,13 +52,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:fontFamily="@font/muli"
+            android:fontFamily="@font/acme"
             android:includeFontPadding="false"
             android:text="@string/otp_description_text"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@android:color/black"
             android:textSize="16sp" />
-
 
         <com.chaos.view.PinView
             android:id="@+id/pin_view"
@@ -71,7 +69,7 @@
             android:cursorVisible="true"
             android:inputType="number"
             android:itemBackground="#65EAEAEA"
-            app:cursorColor="@color/black"
+            app:cursorColor="@android:color/black"
             app:hideLineWhenFilled="true"
             app:itemCount="6"
             app:itemHeight="50dp"
@@ -80,15 +78,14 @@
             app:lineColor="@color/colorAccent"
             app:lineWidth="1dp" />
 
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/btn_gradient"
             android:onClick="callNextScreenFromOTP"
             android:text="@string/verify_code"
-            android:textColor="@color/black"
+            android:textColor="@android:color/black"
             android:transitionName="transition_OTP_screen" />
 
 
