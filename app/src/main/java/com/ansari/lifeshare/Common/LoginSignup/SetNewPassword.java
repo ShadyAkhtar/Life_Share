@@ -9,28 +9,27 @@ import android.widget.Button;
 
 import com.ansari.lifeshare.R;
 
-public class VerifyOTP extends AppCompatActivity {
-    Button btnVerifyCode;
+public class SetNewPassword extends AppCompatActivity {
 
+    Button setNewPasswordBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verify_o_t_p);
-
+        setContentView(R.layout.activity_set_new_password);
 
         //button
-        btnVerifyCode = findViewById(R.id.btnVerifyCode);
-        callNextScreenFromOTP();
+        setNewPasswordBtn = findViewById(R.id.set_new_password_btn);
+        setNewPasswordBtn();
+
     }
 
-    private void callNextScreenFromOTP() {
-        btnVerifyCode.setOnClickListener(new View.OnClickListener() {
+    private void setNewPasswordBtn() {
+        setNewPasswordBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(VerifyOTP.this, SetNewPassword.class);
+                Intent intent = new Intent(SetNewPassword.this, ForgetPasswordSuccessMessage.class);
                 startActivity(intent);
             }
         });
     }
-
 }

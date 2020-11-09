@@ -8,29 +8,30 @@ import android.view.View;
 import android.widget.Button;
 
 import com.ansari.lifeshare.R;
+import com.ansari.lifeshare.User.SignIn;
 
-public class VerifyOTP extends AppCompatActivity {
-    Button btnVerifyCode;
+public class ForgetPasswordSuccessMessage extends AppCompatActivity {
 
+    Button successMessageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verify_o_t_p);
-
+        setContentView(R.layout.activity_forget_password_success_message);
 
         //button
-        btnVerifyCode = findViewById(R.id.btnVerifyCode);
-        callNextScreenFromOTP();
+        successMessageButton = findViewById(R.id.success_message_btn);
+        backToLogin();
     }
 
-    private void callNextScreenFromOTP() {
-        btnVerifyCode.setOnClickListener(new View.OnClickListener() {
+    private void backToLogin() {
+        successMessageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(VerifyOTP.this, SetNewPassword.class);
+                Intent intent = new Intent(ForgetPasswordSuccessMessage.this, SignIn.class);
                 startActivity(intent);
             }
         });
     }
+
 
 }

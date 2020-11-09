@@ -161,6 +161,13 @@ The blood we donate is going to help someone in need now or in the future so doi
     <string name="otp_description_text">Enter one time password sent on\n 9958623147</string>
     <string name="verify_code">VERIFY CODE</string>
     <string name="forget_password_detail">Provide Your Account\'s e-mail for which you want to change to reset your password </string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="next">Next</string>
+    <string name="new_credential">New Credential</string>
+    <string name="new_password_msg">Your identity have been verified! \nSet your new password</string>
+    <string name="password_updated">Password Updated</string>
+    <string name="your_password_has_been_updated">your password has been updated</string>
 
 
 </resources>

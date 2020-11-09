@@ -32,13 +32,13 @@
         <ImageView
             android:id="@+id/menu_icon"
             android:layout_centerVertical="true"
-            android:layout_height="30dp"
-            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_width="35dp"
             android:src="@drawable/ic_humberger_menu" />
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_alignParentRight="true"
 
             android:layout_centerVertical="true"

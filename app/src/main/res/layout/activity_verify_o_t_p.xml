@@ -14,8 +14,8 @@
         android:padding="30dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:onClick="goToHomeFromOTP"
             android:padding="5dp"
             android:src="@drawable/ic_close"
@@ -75,10 +75,11 @@
             app:itemHeight="50dp"
             app:itemRadius="5dp"
             app:itemWidth="50dp"
-            app:lineColor="@color/colorAccent"
+            app:lineColor="@android:color/black"
             app:lineWidth="1dp" />
 
         <Button
+            android:id="@+id/btnVerifyCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"

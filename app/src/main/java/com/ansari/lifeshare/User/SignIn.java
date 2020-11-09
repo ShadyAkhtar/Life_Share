@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.ansari.lifeshare.Common.LoginSignup.ForgetPassword;
 import com.ansari.lifeshare.R;
 
 public class SignIn extends AppCompatActivity {
 
     ImageView menuBack;
-    Button btnSignUp;
+    Button btnSignUp, btnForget;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class SignIn extends AppCompatActivity {
 
         //button
         btnSignUp = findViewById(R.id.btnSignUp);
+        btnForget = findViewById(R.id.forget_btn);
 
         menuBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,7 +35,17 @@ public class SignIn extends AppCompatActivity {
             }
         });
         signUp();
+        forgetPassword();
+    }
 
+    private void forgetPassword() {
+        btnForget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignIn.this, ForgetPassword.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void signUp() {
