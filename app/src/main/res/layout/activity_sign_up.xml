@@ -111,28 +111,50 @@
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="18dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:hint="@string/Dob_txt"-->
+<!--            app:startIconDrawable="@drawable/ic_dob"-->
+<!--            >-->
+
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/dob"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/alegreya_sans_medium"-->
+<!--                android:inputType="date">-->
+
+<!--            </com.google.android.material.textfield.TextInputEditText>-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date Of Birth"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="15dp"
+            android:fontFamily="@font/alegreya_sans_medium"
+            android:textSize="18sp" />
+
+
+        <DatePicker
+            android:id="@+id/age_picker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginRight="20dp"
-            android:hint="@string/Dob_txt"
-            app:startIconDrawable="@drawable/ic_dob"
-            >
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/dob"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/alegreya_sans_medium"
-                android:inputType="date">
-
-            </com.google.android.material.textfield.TextInputEditText>
-        </com.google.android.material.textfield.TextInputLayout>
-
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:spinnersShown="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
         <TextView
             android:id="@+id/txtGender"
             android:layout_width="match_parent"
@@ -141,6 +163,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginRight="15dp"
             android:text="@string/Gender_txt"
+            android:textSize="18sp"
             android:fontFamily="@font/alegreya_sans_medium"
             android:textColor="@android:color/black"
             android:autofillHints="@string/Gender_txt"/>
@@ -148,7 +171,8 @@
         <RadioGroup
             android:id="@+id/btnGender"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
 
             <RadioButton
                 android:id="@+id/btnMale"
@@ -156,7 +180,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:text="@string/male_txt" />
+                android:text="@string/male_txt"
+                android:textSize="16sp"/>
 
             <RadioButton
                 android:id="@+id/btnFemale"
@@ -164,7 +189,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:text="@string/female_txt" />
+                android:text="@string/female_txt"
+                android:textSize="16sp"/>
 
             <RadioButton
                 android:id="@+id/btnOthers"
@@ -172,19 +198,35 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:text="@string/others_txt" />
+                android:text="@string/others_txt"
+                android:textSize="16sp"/>
         </RadioGroup>
-
-        <Spinner
-            android:id="@+id/spinner"
+        <TextView
+            android:id="@+id/txtbldgrp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="8dp"
-            android:layout_marginRight="15dp" />
+            android:layout_marginRight="15dp"
+            android:text="@string/blood_group"
+            android:textSize="18sp"
+            android:fontFamily="@font/alegreya_sans_medium"
+            android:textColor="@android:color/black"
+            android:autofillHints="@string/Gender_txt"/>
+
+        <Spinner
+            android:id="@+id/spinner_bld_grp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="15dp"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/phoneNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -196,7 +238,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/phoneNo"
+                android:id="@+id/E_phoneNo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alegreya_sans_medium"
@@ -207,6 +249,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -218,7 +261,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/email"
+                android:id="@+id/E_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alegreya_sans_medium"
@@ -251,6 +294,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -262,17 +306,19 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/username"
+                android:id="@+id/E_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alegreya_sans_medium"
-                android:inputType="text">
+                android:inputType="text"
+                >
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -285,7 +331,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password"
+                android:id="@+id/E_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alegreya_sans_medium"
@@ -295,6 +341,7 @@
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/confirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -307,7 +354,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/confirmPassword"
+                android:id="@+id/E_confirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alegreya_sans_medium"
@@ -325,7 +372,8 @@
             android:layout_marginRight="15dp"
             android:layout_marginBottom="35dp"
             android:background="@drawable/btn_gradient"
-            android:text="@string/Signup" />
+            android:text="@string/Signup"
+            android:onClick="callNextSignupScreen"/>
 
     </LinearLayout>
     </LinearLayout>

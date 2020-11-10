@@ -168,6 +168,18 @@ The blood we donate is going to help someone in need now or in the future so doi
     <string name="new_password_msg">Your identity have been verified! \nSet your new password</string>
     <string name="password_updated">Password Updated</string>
     <string name="your_password_has_been_updated">your password has been updated</string>
+    <string name="blood_group">Blood Group</string>
+
+    <string-array name="bloodgroup">
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
 
 
 </resources>
