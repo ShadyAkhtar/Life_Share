@@ -34,7 +34,7 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
     //get data variables
 
-    TextInputLayout username,password,confirmPassword,email,phoneNo;
+    TextInputLayout username,password,confirmPassword,email,phoneNo,firstName,lastName,address;
 
 
 
@@ -54,7 +54,9 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         btnGender = findViewById(R.id.btnGender);
         phoneNo = findViewById(R.id.phoneNo);
         datePicker = findViewById(R.id.age_picker);
-
+        firstName = findViewById(R.id.firstName);
+        lastName = findViewById(R.id.lastName);
+        address = findViewById(R.id.address);
 
         menuBack = findViewById(R.id.menu_back);
 
@@ -75,7 +77,8 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
     public void callNextSignupScreen(View view){
 
-        if ( !validateUsername() | !validateEmail() | !validatePassword() | !validateConfirmPassword()) {
+        if ( !validateUsername() | !validateEmail() | !validatePassword() | !validateConfirmPassword() |
+           !validateGender() | !validateAge() | !validatePhoneNumber() | !validateFirstName() | ! validateLastName() |!validateAddress() ) {
             return;
         }
         Intent intent = new Intent(getApplicationContext(), VerifyOTP.class);
@@ -122,14 +125,20 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
     private boolean validatePassword() {
         String val = password.getEditText().getText().toString().trim();
         String checkPassword = "^" +
-                "(?=.*[0-9])" +         //at least 1 digit
+//                "(?=.*[0-9])" +         //at least 1 digit
                 //"(?=.*[a-z])" +         //at least 1 lower case letter
                 //"(?=.*[A-Z])" +         //at least 1 upper case letter
-                "(?=.*[a-zA-Z])" +      //any letter
-               // "(?=.*[@#$%^&+=])" +    //at least 1 special character
-                "(?=\\S+$)" +           //no white spaces
+//                "(?=.*[a-zA-Z])" +      //any letter
+                // "(?=.*[@#$%^&+=])" +    //at least 1 special character
+//                "(?=\\S+$)" +           //no white spaces
                 ".{4,}" +               //at least 4 characters
                 "$";
+
+        String letter = "(?=.*[a-zA-Z])";
+
+        String whiteSpaces = "(?=\\S+$)";
+
+        String digit = "(?=.*[0-9])";
 
         if (val.isEmpty()) {
             password.setError("Field can not be empty");
@@ -137,7 +146,17 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         } else if (!val.matches(checkPassword)) {
             password.setError("Password should contain 4 characters!");
             return false;
-        } else {
+        }
+        else if (!val.matches(digit)) {
+            password.setError("Password should contain atleast 1 digit!");
+            return false;
+        }else if (!val.matches(letter)) {
+            confirmPassword.setError("Password should contain atleast 1 letter!");
+            return false;
+        }else if (!val.matches(whiteSpaces)) {
+            confirmPassword.setError("Password should not contain whiteSpaces!");
+            return false;
+        }else {
             password.setError(null);
             password.setErrorEnabled(false);
             return true;
@@ -146,23 +165,44 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
     private boolean validateConfirmPassword() {
         String val = confirmPassword.getEditText().getText().toString().trim();
+        String val1 = password.getEditText().getText().toString().trim();
         String checkPassword = "^" +
-                "(?=.*[0-9])" +         //at least 1 digit
+//                "(?=.*[0-9])" +         //at least 1 digit
                 //"(?=.*[a-z])" +         //at least 1 lower case letter
                 //"(?=.*[A-Z])" +         //at least 1 upper case letter
-                "(?=.*[a-zA-Z])" +      //any letter
+//                "(?=.*[a-zA-Z])" +      //any letter
                 //"(?=.*[@#$%^&+=])" +    //at least 1 special character
-                "(?=\\S+$)" +           //no white spaces
+//                "(?=\\S+$)" +           //no white spaces
                 ".{4,}" +               //at least 4 characters
                 "$";
+
+        String letter = "(?=.*[a-zA-Z])";
+
+        String whiteSpaces =  "(?=\\S+$)";
+
+        String digit = "(?=.*[0-9])";
+
 
         if (val.isEmpty()) {
             confirmPassword.setError("Field can not be empty");
             return false;
-        } else if (!val.matches(checkPassword)) {
+        }else if(val!=val1){
+            confirmPassword.setError("Entered password does not match");
+            return false;
+        }
+        else if (!val.matches(checkPassword)) {
             confirmPassword.setError("Password should contain 4 characters!");
             return false;
-        } else {
+        } else if (!val.matches(letter)) {
+            confirmPassword.setError("Password should contain atleast 1 letter!");
+            return false;
+        }else if (!val.matches(whiteSpaces)) {
+            confirmPassword.setError("Password should not contain whiteSpaces!");
+            return false;
+        } else if (!val.matches(digit)) {
+            password.setError("Password should contain atleast 1 digit!");
+            return false;
+        }else {
             confirmPassword.setError(null);
             confirmPassword.setErrorEnabled(false);
             return true;
@@ -202,6 +242,50 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         } else {
             phoneNo.setError(null);
             phoneNo.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean validateFirstName() {
+        String val = firstName.getEditText().getText().toString().trim();
+        if (val.isEmpty()) {
+            firstName.setError("Field can not be empty");
+            return false;
+        } else {
+            firstName.setError(null);
+            firstName.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean validateLastName() {
+        String val = lastName.getEditText().getText().toString().trim();
+        if (val.isEmpty()) {
+            lastName.setError("Field can not be empty");
+            return false;
+        } else {
+            lastName.setError(null);
+            lastName.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean validateAddress() {
+        String val = address.getEditText().getText().toString().trim();
+//        String checkspaces = "\\A\\w{1,20}\\z";
+
+        if (val.isEmpty()) {
+            address.setError("Field can not be empty");
+            return false;
+//        } else if (val.length() > 20) {
+//            username.setError("Username is too large!");
+//            return false;
+//        } else if (!val.matches(checkspaces)) {
+//            username.setError("No White spaces are allowed!");
+//            return false;
+        } else {
+            address.setError(null);
+            address.setErrorEnabled(false);
             return true;
         }
     }

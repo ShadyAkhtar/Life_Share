@@ -68,6 +68,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/firstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -79,7 +80,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/firstName"
+                android:id="@+id/E_firstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alegreya_sans_medium"
@@ -91,6 +92,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/lastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -102,7 +104,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/lastName"
+                android:id="@+id/E_lastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alegreya_sans_medium"
@@ -272,6 +274,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -283,7 +286,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/address"
+                android:id="@+id/E_address"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:fontFamily="@font/alegreya_sans_medium"
