@@ -20,6 +20,7 @@ import com.ansari.lifeshare.R;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Calendar;
+import java.util.regex.Pattern;
 
 public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -125,40 +126,41 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
     private boolean validatePassword() {
         String val = password.getEditText().getText().toString().trim();
         String checkPassword = "^" +
-                "(?=.*[0-9])" +         //at least 1 digit
+//                "(?=.*[0-9])" +         //at least 1 digit
                 //"(?=.*[a-z])" +         //at least 1 lower case letter
                 //"(?=.*[A-Z])" +         //at least 1 upper case letter
-                "(?=.*[a-zA-Z])" +      //any letter
+//                "(?=.*[a-zA-Z])" +      //any letter
                 // "(?=.*[@#$%^&+=])" +    //at least 1 special character
-                "(?=\\S+$)" +           //no white spaces
+//                "(?=\\S+$)" +           //no white spaces
                 ".{4,}" +               //at least 4 characters
                 "$";
 
-//        String letter =  "(?=.*[a-zA-Z])" ;
-
-//        String whiteSpaces = "^" + "(?=\\S+$)" + "$";
-
-//        String digit = "^" + "(?=.*[0-9])" + "$";
+        Pattern digit = Pattern.compile("[0-9]");
+        Pattern letter = Pattern.compile("[A-Za-z]");
+        Pattern whiteSpaces = Pattern.compile("\\s");
 
         if (val.isEmpty()) {
             password.setError("Field can not be empty");
             return false;
-        } else if (!val.matches(checkPassword)) {
-            password.setError("Password is too weak!\n Password should contain letter,digit, \natleast 4 character, no white space");
+        }
+
+        else if (!val.matches(checkPassword)) {
+           password.setError("Password should contain atleast 4 character");
             return false;
         }
-//        else if (!val.matches(digit)) {
-//            password.setError("Password should contain atleast 1 digit!");
-//            return false;
-//        }
-//        else if (!val.matches(letter)) {
-//            password.setError("Password should contain atleast 1 letter!");
-//            return false;
-//        }
-//        else if (!val.matches(whiteSpaces)) {
-//            password.setError("Password should not contain whiteSpaces!");
-//            return false;
-//        }
+
+        else if (!letter.matcher(val).find()) {
+            password.setError("Password should contain atleast 1 letter!");
+            return false;
+        }
+        else if (whiteSpaces.matcher(val).find()) {
+            password.setError("Password should not contain whiteSpaces!");
+            return false;
+        }
+        else if (!digit.matcher(val).find()) {
+            password.setError("Password should contain atleast 1 digit!");
+            return false;
+        }
         else {
             password.setError(null);
             password.setErrorEnabled(false);
@@ -170,12 +172,12 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         String val = confirmPassword.getEditText().getText().toString().trim();
         String val1 = password.getEditText().getText().toString().trim();
         String checkPassword = "^" +
-                "(?=.*[0-9])" +         //at least 1 digit
+//                "(?=.*[0-9])" +         //at least 1 digit
                 //"(?=.*[a-z])" +         //at least 1 lower case letter
                 //"(?=.*[A-Z])" +         //at least 1 upper case letter
-                "(?=.*[a-zA-Z])" +      //any letter
+//                "(?=.*[a-zA-Z])" +      //any letter
                 //"(?=.*[@#$%^&+=])" +    //at least 1 special character
-                "(?=\\S+$)" +           //no white spaces
+//                "(?=\\S+$)" +           //no white spaces
                 ".{4,}" +               //at least 4 characters
                 "$";
 
@@ -183,7 +185,9 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
 //
 //        String whiteSpaces = "^" + "(?=\\S+$)"+"$";
 //
-//        String digit = "^" + "(?=.*[0-9])"+"$";
+        Pattern digit = Pattern.compile("[0-9]");
+        Pattern letter = Pattern.compile("[A-Za-z]");
+        Pattern whiteSpaces = Pattern.compile("\\s");
 
 
         if (val.isEmpty()) {
@@ -192,21 +196,24 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         }
 
         else if (!val.matches(checkPassword)) {
-            confirmPassword.setError("Password is too weak! \nPassword should contain letter,digit, \natleast 4 character, no white space");
+//            confirmPassword.setError("Password is too weak! \nPassword should contain letter,digit, \natleast 4 character, no white space");
+            confirmPassword.setError("Password should contain atleast 4 character");
             return false;
         }
 
-//        else if (!val.matches(letter)) {
-//            confirmPassword.setError("Password should contain atleast 1 letter!");
-//            return false;
-//        }else if (!val.matches(whiteSpaces)) {
-//            confirmPassword.setError("Password should not contain whiteSpaces!");
-//            return false;
-//        } else if (!val.matches(digit)) {
-//            confirmPassword.setError("Password should contain atleast 1 digit!");
-//            return false;
-//        }
-        else if (val != val1){
+        else if (!letter.matcher(val1).find()) {
+            confirmPassword.setError("Password should contain atleast 1 letter!");
+            return false;
+        }
+        else if (whiteSpaces.matcher(val1).find()) {
+            confirmPassword.setError("Password should not contain whiteSpaces!");
+            return false;
+        }
+        else if (!digit.matcher(val1).find()) {
+            confirmPassword.setError("Password should contain atleast 1 digit!");
+            return false;
+        }
+        else if (!val.equals(val1)){
             confirmPassword.setError("Password does not match");
             return false;
         }
@@ -246,7 +253,7 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
     private boolean validatePhoneNumber() {
         String val = phoneNo.getEditText().getText().toString().trim();
-        String checkspaces = "Aw{1,20}z";
+        String checkspaces = "\\A\\w{1,20}\\z";
         if (val.isEmpty()) {
             phoneNo.setError("Enter valid phone number");
             return false;

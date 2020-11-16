@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "935030386030",
+    "firebase_url": "https://life-share-fbbe7.firebaseio.com",
+    "project_id": "life-share-fbbe7",
+    "storage_bucket": "life-share-fbbe7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935030386030:android:23d1674938f45faab6a57f",
+        "android_client_info": {
+          "package_name": "com.ansari.lifeshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935030386030-cd0d34dj4n9ru0fag6ffho4uf4kss9up.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ansari.lifeshare",
+            "certificate_hash": "8ab33f1628b8a918b1c31c36851426f1745c5780"
+          }
+        },
+        {
+          "client_id": "935030386030-ds1kvl667jm3cgln8ruqd9mi5gvkkav2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI-jN-hHQDlnch4LxJM0VA0PkP2c8zh5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "935030386030-ds1kvl667jm3cgln8ruqd9mi5gvkkav2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
