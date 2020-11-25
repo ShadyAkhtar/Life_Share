@@ -11,13 +11,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.ansari.lifeshare.Common.LoginSignup.VerifyOTP;
 import com.ansari.lifeshare.R;
+import com.ansari.lifeshare.demo;
 import com.google.android.material.textfield.TextInputLayout;
+import com.hbb20.CountryCodePicker;
 
 import java.util.Calendar;
 import java.util.regex.Pattern;
@@ -27,17 +30,17 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
     ImageView menuBack;
     Spinner spinnerBldGrp;
     DatePicker datePicker;
-
+    CountryCodePicker countryCodePicker;
     //variables
 
     Button btnSignup;
+    RadioButton selectedRadioButton;
     RadioGroup btnGender;
+    String _bloodgroup = "";
 
     //get data variables
 
-    TextInputLayout username,password,confirmPassword,email,phoneNo,firstName,lastName,address;
-
-
+    TextInputLayout username, password, confirmPassword, email, phoneNo, firstName, lastName, address;
 
 
     @Override
@@ -47,17 +50,19 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
 
         //hooks for button
-        btnSignup = findViewById(R.id.btnSignup);
-        username =findViewById(R.id.username);
-        email =  findViewById(R.id.email);
-        password = findViewById(R.id.password);
-        confirmPassword = findViewById(R.id.confirmPassword);
-        btnGender = findViewById(R.id.btnGender);
-        phoneNo = findViewById(R.id.phoneNo);
-        datePicker = findViewById(R.id.age_picker);
         firstName = findViewById(R.id.firstName);
         lastName = findViewById(R.id.lastName);
+        datePicker = findViewById(R.id.age_picker);
+        btnGender = findViewById(R.id.btnGender);
+        countryCodePicker = findViewById(R.id.country_code_picker);
+        phoneNo = findViewById(R.id.phoneNo);
+        email = findViewById(R.id.email);
         address = findViewById(R.id.address);
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+        confirmPassword = findViewById(R.id.confirmPassword);
+        btnSignup = findViewById(R.id.btnSignup);
+
 
         menuBack = findViewById(R.id.menu_back);
 
@@ -76,13 +81,49 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         });
     }
 
-    public void callNextSignupScreen(View view){
+    public void callNextSignupScreen(View view) {
 
-        if ( !validateUsername() | !validateEmail() | !validatePassword() | !validateConfirmPassword() |
-           !validateGender() | !validateAge() | !validatePhoneNumber() | !validateFirstName() | ! validateLastName() |!validateAddress() ) {
+        if (!validateUsername() | !validateEmail() | !validatePassword() | !validateConfirmPassword() |
+                !validateGender() | !validateAge() | !validatePhoneNumber() | !validateFirstName() | !validateLastName() | !validateAddress()) {
             return;
         }
+
+        String _fName = firstName.getEditText().getText().toString().trim();
+        String _lName = lastName.getEditText().getText().toString().trim();
+        //Get complete phone number
+        String _getUserEnteredPhoneNumber = phoneNo.getEditText().getText().toString().trim();
+//Remove first zero if entered!
+        if (_getUserEnteredPhoneNumber.charAt(0) == '0') {
+            _getUserEnteredPhoneNumber = _getUserEnteredPhoneNumber.substring(1);
+        }
+//Complete phone number
+        final String _phoneNo = "+" + countryCodePicker.getFullNumber() + _getUserEnteredPhoneNumber;
+
+        String _email = email.getEditText().getText().toString().trim();
+        String _address = address.getEditText().getText().toString().trim();
+        String _username = username.getEditText().getText().toString().trim();
+        String _password = password.getEditText().getText().toString().trim();
+        int _dobday = datePicker.getDayOfMonth();
+        int _dobmonth = datePicker.getMonth() + 1;
+        int _dobyear = datePicker.getYear();
+        String _dob = Integer.toString(_dobday) + "-" + Integer.toString(_dobmonth) + "-" + Integer.toString(_dobyear);
+        selectedRadioButton  = (RadioButton)findViewById(btnGender.getCheckedRadioButtonId());
+        //get RadioButton text
+        String _gender = selectedRadioButton.getText().toString();
         Intent intent = new Intent(getApplicationContext(), VerifyOTP.class);
+//        Intent intent = new Intent(getApplicationContext(), demo.class);
+
+
+        intent.putExtra("fname",_fName);
+        intent.putExtra("lname",_lName);
+        intent.putExtra("dob",_dob);
+        intent.putExtra("gender",_gender);
+        intent.putExtra("bloodgroup",_bloodgroup);
+        intent.putExtra("phone",_phoneNo);
+        intent.putExtra("email",_email);
+        intent.putExtra("address",_address);
+        intent.putExtra("username",_username);
+        intent.putExtra("password",_password);
         startActivity(intent);
     }
 
@@ -142,26 +183,19 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         if (val.isEmpty()) {
             password.setError("Field can not be empty");
             return false;
-        }
-
-        else if (!val.matches(checkPassword)) {
-           password.setError("Password should contain atleast 4 character");
+        } else if (!val.matches(checkPassword)) {
+            password.setError("Password should contain atleast 4 character");
             return false;
-        }
-
-        else if (!letter.matcher(val).find()) {
+        } else if (!letter.matcher(val).find()) {
             password.setError("Password should contain atleast 1 letter!");
             return false;
-        }
-        else if (whiteSpaces.matcher(val).find()) {
+        } else if (whiteSpaces.matcher(val).find()) {
             password.setError("Password should not contain whiteSpaces!");
             return false;
-        }
-        else if (!digit.matcher(val).find()) {
+        } else if (!digit.matcher(val).find()) {
             password.setError("Password should contain atleast 1 digit!");
             return false;
-        }
-        else {
+        } else {
             password.setError(null);
             password.setErrorEnabled(false);
             return true;
@@ -181,6 +215,7 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
                 ".{4,}" +               //at least 4 characters
                 "$";
 
+
 //        String letter = "^"+"(?=.*[a-zA-Z])"+"$";
 //
 //        String whiteSpaces = "^" + "(?=\\S+$)"+"$";
@@ -193,31 +228,23 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         if (val.isEmpty()) {
             confirmPassword.setError("Field can not be empty");
             return false;
-        }
-
-        else if (!val.matches(checkPassword)) {
+        } else if (!val.matches(checkPassword)) {
 //            confirmPassword.setError("Password is too weak! \nPassword should contain letter,digit, \natleast 4 character, no white space");
             confirmPassword.setError("Password should contain atleast 4 character");
             return false;
-        }
-
-        else if (!letter.matcher(val1).find()) {
+        } else if (!letter.matcher(val1).find()) {
             confirmPassword.setError("Password should contain atleast 1 letter!");
             return false;
-        }
-        else if (whiteSpaces.matcher(val1).find()) {
+        } else if (whiteSpaces.matcher(val1).find()) {
             confirmPassword.setError("Password should not contain whiteSpaces!");
             return false;
-        }
-        else if (!digit.matcher(val1).find()) {
+        } else if (!digit.matcher(val1).find()) {
             confirmPassword.setError("Password should contain atleast 1 digit!");
             return false;
-        }
-        else if (!val.equals(val1)){
+        } else if (!val.equals(val1)) {
             confirmPassword.setError("Password does not match");
             return false;
-        }
-        else {
+        } else {
             confirmPassword.setError(null);
             confirmPassword.setErrorEnabled(false);
             return true;
@@ -312,13 +339,10 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
     }
 
 
-
-
-
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
-        String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+        _bloodgroup = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(), _bloodgroup, Toast.LENGTH_SHORT).show();
     }
 
     @Override

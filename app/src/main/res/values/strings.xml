@@ -158,7 +158,7 @@ The blood we donate is going to help someone in need now or in the future so doi
     <!--otp screen-->
     <string name="otp_code_text">co\nde</string>
     <string name="otp_verification_text">verification</string>
-    <string name="otp_description_text">Enter one time password sent on\n 9958623147</string>
+    <string name="otp_description_text">Enter one time password sent on </string>
     <string name="verify_code">VERIFY CODE</string>
     <string name="forget_password_detail">Provide Your Account\'s e-mail for which you want to change to reset your password </string>
     <string name="remember_me">Remember Me</string>
