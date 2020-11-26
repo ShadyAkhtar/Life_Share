@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ansari.lifeshare.Common.Database.UserHelperClass;
 import com.ansari.lifeshare.R;
 import com.chaos.view.PinView;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,11 +22,17 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.concurrent.TimeUnit;
 
 public class VerifyOTP extends AppCompatActivity {
-    Button btnVerifyCode;
+
+    String fname, lname, dob, gender, bloodgroup, phone, email, address, username, password;
+
+
+//    Button btnVerifyCode;
     PinView pinFromUser;
     String codeBySystem;
     TextView otpPhone;
@@ -34,13 +41,24 @@ public class VerifyOTP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_o_t_p);
 
-       String phone = getIntent().getStringExtra("phone");
+
+        fname = getIntent().getStringExtra("fname");
+        lname = getIntent().getStringExtra("lname");
+        dob = getIntent().getStringExtra("dob");
+        gender = getIntent().getStringExtra("gender");
+        bloodgroup = getIntent().getStringExtra("bloodgroup");
+        phone = getIntent().getStringExtra("phone");
+        email = getIntent().getStringExtra("email");
+        address = getIntent().getStringExtra("address");
+        username = getIntent().getStringExtra("username");
+        password = getIntent().getStringExtra("password");
 
        sendVerificationCodeToUser(phone);
         otpPhone = findViewById(R.id.otp_description_text);
-        otpPhone.setText(R.string.otp_description_text + "\n" + phone);
-        //button
-        btnVerifyCode = findViewById(R.id.btnVerifyCode);
+        otpPhone.setText("Enter One Time Password sent on \n" + phone);
+        pinFromUser = findViewById(R.id.pin_view);
+//        button
+//        btnVerifyCode = findViewById(R.id.btnVerifyCode);
     }
 
     private void sendVerificationCodeToUser(String phone) {
@@ -93,6 +111,8 @@ public class VerifyOTP extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            
+                            storeNewUsesrData();
 
                             Toast.makeText(VerifyOTP.this, "Verfication Successful", Toast.LENGTH_SHORT).show();
                             //Verification completed successfully here Either
@@ -110,6 +130,15 @@ public class VerifyOTP extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void storeNewUsesrData() {
+
+        FirebaseDatabase rootnode = FirebaseDatabase.getInstance();
+        DatabaseReference reference = rootnode.getReference("Users");
+
+        UserHelperClass newUser = new UserHelperClass( fname, lname, dob, gender, bloodgroup, phone, email, address, username, password);
+            reference.child(phone).setValue(newUser);
     }
 
     public void callNextScreenFromOTP(View view){

@@ -54,7 +54,6 @@
             android:layout_marginTop="50dp"
             android:fontFamily="@font/acme"
             android:includeFontPadding="false"
-            android:text="@string/otp_description_text"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
