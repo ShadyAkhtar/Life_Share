@@ -9,16 +9,16 @@
     tools:openDrawer="start"
     android:id="@+id/drawer_layout">
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/bannerBackground"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/menu_header"
-        app:menu="@menu/main_menu"
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:id="@+id/navigation_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@color/bannerBackground"-->
+<!--        android:layout_gravity="start"-->
+<!--        app:headerLayout="@layout/menu_header"-->
+<!--        app:menu="@menu/main_menu"-->
 
-        />
+<!--        />-->
 
     <LinearLayout
         android:id="@+id/contentView"
@@ -115,22 +115,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-            <TextView
-                android:id="@+id/txtBasicMotiveHead"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                android:fontFamily="@font/acme"
-                android:text="@string/common_reason"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
+<!--            <TextView-->
+<!--                android:id="@+id/txtBasicMotiveHead"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:fontFamily="@font/acme"-->
+<!--                android:text="@string/common_reason"-->
+<!--                android:textColor="@android:color/black"-->
+<!--                android:textSize="24sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />-->
 
             <TextView
                 android:id="@+id/txtBasicMotive"
@@ -143,15 +143,26 @@
                 android:layout_marginRight="20dp"
 
                 android:fontFamily="@font/alegreya_sans_medium"
-                android:text="In most states, donors must be age 17 or older.
-        Some states allow donation by 16-year-olds with a signed parental consent form.
-        Donors must weigh at least 110 pounds and be in good health. Additional eligibility criteria apply."
+                android:text="\n   Every day blood transfusions take place and save millions of lives all over the world.
+\n
+
+ Blood donation is a service to humankind. By donating blood, you help someone in need, and it can very well save a precious life.
+\n
+ That’s precisely why we celebrate World Blood Donor Day on the 14th of June every year to encourage blood donation and also to give thanks to all the blood donors all around the globe.
+\n
+ One of the main reasons why people are not donating blood is that some of them are not fully aware of its benefits, and some are even afraid to do so because of misinformation. To better understand the concept, we’ve compiled some basic facts about blood donation.
+\n
+ The process is as simple as:
+  \n•Registration
+  \n•Mini-physical exam and medical history
+  \n•Donation of blood
+  \n•Refreshments"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtBasicMotiveHead" />
+                app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/featured_recycler"
