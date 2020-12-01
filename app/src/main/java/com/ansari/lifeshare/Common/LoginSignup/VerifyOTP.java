@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.ansari.lifeshare.Common.Database.UserHelperClass;
 import com.ansari.lifeshare.R;
+import com.ansari.lifeshare.User.UserDashboard;
 import com.chaos.view.PinView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,7 +30,7 @@ import java.util.concurrent.TimeUnit;
 
 public class VerifyOTP extends AppCompatActivity {
 
-    String fname, lname, dob, gender, bloodgroup, phone, email, address, username, password;
+    String fname, lname, dob, gender, bloodgroup, phone, email, address, username, password, whatToDO;
 
 
 //    Button btnVerifyCode;
@@ -52,6 +53,8 @@ public class VerifyOTP extends AppCompatActivity {
         address = getIntent().getStringExtra("address");
         username = getIntent().getStringExtra("username");
         password = getIntent().getStringExtra("password");
+        //forget password
+        whatToDO = getIntent().getStringExtra("whatToDO");
 
        sendVerificationCodeToUser(phone);
         otpPhone = findViewById(R.id.otp_description_text);
@@ -111,34 +114,41 @@ public class VerifyOTP extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            
-                            storeNewUsesrData();
-
                             Toast.makeText(VerifyOTP.this, "Verfication Successful", Toast.LENGTH_SHORT).show();
-                            //Verification completed successfully here Either
-                            // store the data or do whatever desire
-//                            if (whatToDO.equals("updateData")) {
-//                                updateOldUsersData();
-//                            } else if (whatToDO.equals("createNewUser")) {
-//                                storeNewUsersData();
-//                            }
+//                            Verification completed successfully here Either
+//                             store the data or do whatever desire
+                            if (whatToDO.equals("updateData")) {
+                                updateOldUsersData();
+                            } else if (whatToDO.equals("createNewUser")) {
+                                storeNewUsersData();
+                            }
                         }
                         else {
-//                            if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                            if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 Toast.makeText(VerifyOTP.this, "Verification Not Completed! Try again.", Toast.LENGTH_SHORT).show();
-//                            }
+                            }
                         }
                     }
                 });
     }
 
-    private void storeNewUsesrData() {
+    private void updateOldUsersData() {
+        Intent intent = new Intent(getApplicationContext(), SetNewPassword.class);
+        intent.putExtra("phone", phone);
+        startActivity(intent);
+        finish();
+    }
+
+    private void storeNewUsersData() {
 
         FirebaseDatabase rootnode = FirebaseDatabase.getInstance();
         DatabaseReference reference = rootnode.getReference("Users");
 
         UserHelperClass newUser = new UserHelperClass( fname, lname, dob, gender, bloodgroup, phone, email, address, username, password);
             reference.child(phone).setValue(newUser);
+        Intent intent = new Intent(getApplicationContext(), UserDashboard.class);
+        startActivity(intent);
+        finish();
     }
 
     public void callNextScreenFromOTP(View view){
@@ -151,6 +161,10 @@ public class VerifyOTP extends AppCompatActivity {
 //                startActivity(intent);
     }
 
+    public void goToHomeFromOTP(View view) {
+        startActivity(new Intent(getApplicationContext(), UserDashboard.class));
+        finish();
+    }
 
 
 }

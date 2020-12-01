@@ -41,7 +41,7 @@
 
         </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -67,31 +67,45 @@
             app:fontFamily="@font/arbutus"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/loginUsername"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginRight="50dp"
-            android:hint="@string/username_hint"
-            app:startIconDrawable="@drawable/ic_user">
-
-            <com.google.android.material.textfield.TextInputEditText
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/signIn_country_code_picker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/alegreya_sans_medium"
-                android:inputType="text">
+                android:background="@color/bannerBackground"
+                android:padding="7dp"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_showFlag="true"
+                app:ccp_showFullName="true"
+                app:ccp_showNameCode="true"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_below="@+id/textView3"/>
 
-            </com.google.android.material.textfield.TextInputEditText>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/signIn_phoneNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:hint="@string/Phone_txt"
+                app:startIconDrawable="@drawable/ic_phone"
+                android:layout_below="@+id/signIn_country_code_picker">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/E_signIn_phoneNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alegreya_sans_medium"
+                    android:inputType="phone">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/loginPassword"
+            android:id="@+id/signIn_Password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,9 +116,11 @@
             android:layout_marginRight="50dp"
             android:hint="@string/password_txt"
             app:passwordToggleEnabled="true"
-            app:startIconDrawable="@drawable/ic_password">
+            app:startIconDrawable="@drawable/ic_password"
+            android:layout_below="@+id/signIn_phoneNo">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/E_signIn_Password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alegreya_sans_medium"
@@ -114,8 +130,10 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 <RelativeLayout
+    android:id="@+id/remember_forget"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_below="@id/signIn_Password">
 <CheckBox
     android:id="@+id/remember"
     android:layout_width="wrap_content"
@@ -139,16 +157,15 @@
 </RelativeLayout>
 
 
-
-
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="50dp"
-            android:background="@drawable/btn_gradient"
-            android:text="@string/sign_in" />
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="50dp"
+                android:background="@drawable/btn_gradient"
+                android:onClick="letTheUserLoggedIn"
+                android:text="@string/sign_in"
+                android:layout_below="@+id/remember_forget"/>
 
         <Button
             android:id="@+id/btnSignUp"
@@ -159,8 +176,26 @@
             android:layout_marginRight="50dp"
             android:layout_marginBottom="50dp"
             android:background="@drawable/btn_gradient"
-            android:text="@string/register_btn_txt" />
-        </LinearLayout>
+            android:text="@string/register_btn_txt"
+            android:layout_below="@+id/btnSignIn"/>
+
+            <RelativeLayout
+                android:id="@+id/login_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/white_circle"
+                android:elevation="8dp"
+                android:padding="20dp"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+        </RelativeLayout>
     </LinearLayout>
 
 </ScrollView>

@@ -124,6 +124,7 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         intent.putExtra("address",_address);
         intent.putExtra("username",_username);
         intent.putExtra("password",_password);
+        intent.putExtra("whatToDO", "createNewUser");
         startActivity(intent);
     }
 
