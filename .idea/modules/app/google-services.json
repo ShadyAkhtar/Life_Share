@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "935030386030-5fpi455847fld4i89b9cpshpmvniv1l5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ansari.lifeshare",
+            "certificate_hash": "5d23dec5a453d84c783df8961c92b6b4ae4c8637"
+          }
+        },
+        {
           "client_id": "935030386030-cd0d34dj4n9ru0fag6ffho4uf4kss9up.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
