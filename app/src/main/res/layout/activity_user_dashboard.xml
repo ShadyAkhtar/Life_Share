@@ -132,35 +132,53 @@
 <!--                app:layout_constraintStart_toStartOf="parent"-->
 <!--                app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />-->
 
-            <TextView
-                android:id="@+id/txtBasicMotive"
-                android:layout_width="match_parent"
+<!--            <TextView-->
+<!--                android:id="@+id/txtBasicMotive"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:layout_marginRight="20dp"-->
+
+<!--                android:fontFamily="@font/alegreya_sans_medium"-->
+<!--                android:text="\n   Every day blood transfusions take place and save millions of lives all over the world.-->
+<!--\n-->
+
+<!-- Blood donation is a service to humankind. By donating blood, you help someone in need, and it can very well save a precious life.-->
+<!--\n-->
+<!-- That’s precisely why we celebrate World Blood Donor Day on the 14th of June every year to encourage blood donation and also to give thanks to all the blood donors all around the globe.-->
+<!--\n-->
+<!-- One of the main reasons why people are not donating blood is that some of them are not fully aware of its benefits, and some are even afraid to do so because of misinformation. To better understand the concept, we’ve compiled some basic facts about blood donation.-->
+<!--\n-->
+<!-- The process is as simple as:-->
+<!--  \n•Registration-->
+<!--  \n•Mini-physical exam and medical history-->
+<!--  \n•Donation of blood-->
+<!--  \n•Refreshments"-->
+<!--                android:textColor="@android:color/black"-->
+<!--                android:textSize="20sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />-->
+
+            <Button
+                android:id="@+id/btnDonate"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+
+
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="20dp"
+
+                android:layout_marginTop="25dp"
                 android:layout_marginRight="20dp"
 
-                android:fontFamily="@font/alegreya_sans_medium"
-                android:text="\n   Every day blood transfusions take place and save millions of lives all over the world.
-\n
-
- Blood donation is a service to humankind. By donating blood, you help someone in need, and it can very well save a precious life.
-\n
- That’s precisely why we celebrate World Blood Donor Day on the 14th of June every year to encourage blood donation and also to give thanks to all the blood donors all around the globe.
-\n
- One of the main reasons why people are not donating blood is that some of them are not fully aware of its benefits, and some are even afraid to do so because of misinformation. To better understand the concept, we’ve compiled some basic facts about blood donation.
-\n
- The process is as simple as:
-  \n•Registration
-  \n•Mini-physical exam and medical history
-  \n•Donation of blood
-  \n•Refreshments"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
+                android:background="@drawable/btn_gradient"
+                android:text="Donate"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
 
@@ -177,7 +195,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtBasicMotive"/>
+                app:layout_constraintTop_toBottomOf="@+id/btnDonate"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

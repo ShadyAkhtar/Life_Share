@@ -112,18 +112,19 @@
 
             </com.google.android.material.textfield.TextInputEditText>
 
-            <TextView
-                android:id="@+id/txtGender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="15dp"
-                android:autofillHints="@string/Gender_txt"
-                android:fontFamily="@font/alegreya_sans_medium"
-                android:text="@string/Gender_txt"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtGender"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="15dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_marginRight="15dp"-->
+<!--                android:autofillHints="@string/Gender_txt"-->
+<!--                android:fontFamily="@font/alegreya_sans_medium"-->
+<!--                android:text="@string/Gender_txt"-->
+<!--                android:textColor="@android:color/black"-->
+<!--                android:textSize="18sp" />-->
         </com.google.android.material.textfield.TextInputLayout>
 
 <!--        <com.google.android.material.textfield.TextInputLayout-->
@@ -170,6 +171,19 @@
             android:spinnersShown="true"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"/>
+
+        <TextView
+            android:id="@+id/txtGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="15dp"
+            android:autofillHints="@string/Gender_txt"
+            android:fontFamily="@font/alegreya_sans_medium"
+            android:text="@string/Gender_txt"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
         <RadioGroup
             android:id="@+id/btnGender"

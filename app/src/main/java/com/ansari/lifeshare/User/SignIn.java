@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.ansari.lifeshare.Common.LoginSignup.ForgetPassword;
+import com.ansari.lifeshare.Databases.SessionManager;
 import com.ansari.lifeshare.HelperClasses.CheckInternet;
 import com.ansari.lifeshare.R;
 import com.google.android.material.textfield.TextInputEditText;
@@ -137,18 +138,21 @@ public class SignIn extends AppCompatActivity {
                         String _lName = dataSnapshot.child(_completePhoneNumber).child("lname").getValue(String.class);
                         String _email = dataSnapshot.child(_completePhoneNumber).child("email").getValue(String.class);
                         String _phoneNo = dataSnapshot.child(_completePhoneNumber).child("phone").getValue(String.class);
+                        String _address = dataSnapshot.child(_completePhoneNumber).child("address").getValue(String.class);
                         String _password = dataSnapshot.child(_completePhoneNumber).child("password").getValue(String.class);
                         String _dob = dataSnapshot.child(_completePhoneNumber).child("dob").getValue(String.class);
                         String _gender = dataSnapshot.child(_completePhoneNumber).child("gender").getValue(String.class);
-                        String _address = dataSnapshot.child(_completePhoneNumber).child("address").getValue(String.class);
+                        String _bloodgroup = dataSnapshot.child(_completePhoneNumber).child("bloodgroup").getValue(String.class);
+//                        String _address = dataSnapshot.child(_completePhoneNumber).child("address").getValue(String.class);
 
                         Toast.makeText(SignIn.this, _fName+"\n" + _lName+"\n " +_email+"\n" +_phoneNo+"\n" +_password+"\n" +_dob+"\n" +_gender+"\n" +_address, Toast.LENGTH_SHORT).show();
                         
                         //Create a Session
-//                        SessionManager sessionManager = new SessionManager(Login.this, SessionManager.SESSION_USERSESSION);
-//                        sessionManager.createLoginSession(_fullname, _username, _email, _phoneNo, _password, _dateOfBirth, _gender);
+                        SessionManager sessionManager = new SessionManager(SignIn.this);
+                        sessionManager.createLoginSession(_fName,_lName, _address, _email, _phoneNo, _password, _dob, _gender,_address,_bloodgroup);
 
-                        startActivity(new Intent(getApplicationContext(), UserDashboard.class));
+//                        startActivity(new Intent(getApplicationContext(), UserDashboard.class));
+                        startActivity(new Intent(getApplicationContext(), reatailer_dashboard.class));
                         finish();
                         progressbar.setVisibility(View.GONE);
 

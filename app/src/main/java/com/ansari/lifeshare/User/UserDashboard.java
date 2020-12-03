@@ -20,6 +20,7 @@ import com.ansari.lifeshare.Common.LearnAboutBlood;
 import com.ansari.lifeshare.HelperClasses.HomeAdapter.FeaturedAdapter;
 import com.ansari.lifeshare.HelperClasses.HomeAdapter.FeaturedHelperClass;
 import com.ansari.lifeshare.R;
+import com.ansari.lifeshare.donor_registeration;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ImageView menuIcon;
-    Button btnSignIn;
+    Button btnSignIn,btnDonate;
     RecyclerView featuredRecycler;
     RecyclerView.Adapter adapter;
 
@@ -55,12 +56,14 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         menuIcon = findViewById(id.menu_icon);
 
         btnSignIn = findViewById(id.btnSignIn);
+        btnDonate = findViewById(id.btnDonate);
 
         contentView = findViewById(id.contentView);
 
         navigationView.setItemIconTintList(null);
 
         signIn();
+        donate();
 
         navigationDrawer();
 
@@ -89,6 +92,16 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(UserDashboard.this,SignIn.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void donate() {
+        btnDonate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserDashboard.this, donor_registeration.class);
                 startActivity(intent);
             }
         });
