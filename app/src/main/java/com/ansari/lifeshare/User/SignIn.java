@@ -19,6 +19,7 @@ import com.ansari.lifeshare.Common.LoginSignup.ForgetPassword;
 import com.ansari.lifeshare.Databases.SessionManager;
 import com.ansari.lifeshare.HelperClasses.CheckInternet;
 import com.ansari.lifeshare.R;
+import com.ansari.lifeshare.retailer_dashboard;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
@@ -27,6 +28,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
+
+import java.util.HashMap;
 
 public class SignIn extends AppCompatActivity {
 
@@ -50,9 +53,17 @@ public class SignIn extends AppCompatActivity {
         phoneNumber = findViewById(R.id.signIn_phoneNo);
         password = findViewById(R.id.signIn_Password);
         progressbar = findViewById(R.id.login_progress_bar);
-        rememberMe = findViewById(R.id.remember);
+        rememberMe = findViewById(R.id.remember_me);
         phoneNumberEditText = findViewById(R.id.E_signIn_phoneNo);
         passwordEditText = findViewById(R.id.E_signIn_Password);
+
+        //Check weather phone number and password is already saved in Shared Preferences or not
+        SessionManager sessionManager = new SessionManager(SignIn.this, SessionManager.SESSION_REMEMMBERME);
+        if (sessionManager.checkRememberMe()) {
+            HashMap<String, String> rememberMeDetails = sessionManager.getRemeberMeDetailsFromSession();
+            phoneNumberEditText.setText(rememberMeDetails.get(SessionManager.KEY_SESSIONPHONENUMBER));
+            passwordEditText.setText(rememberMeDetails.get(SessionManager.KEY_SESSIONPASSWORD));
+        }
 
         //button
         btnSignUp = findViewById(R.id.btnSignUp);
@@ -113,10 +124,10 @@ public class SignIn extends AppCompatActivity {
 
 
         //Check Remember Me Button to create it's session
-//        if (rememberMe.isChecked()) {
-//            SessionManager sessionManager = new SessionManager(Login.this, SessionManager.SESSION_REMEMMBERME);
-//            sessionManager.createRememberMeSession(_phoneNumber, _password);
-//        }
+        if (rememberMe.isChecked()) {
+            SessionManager sessionManager = new SessionManager(SignIn.this, SessionManager.SESSION_REMEMMBERME);
+            sessionManager.createRememberMeSession(_phoneNumber, _password);
+        }
 
         //Check weather User exists or not in database
         Query checkUser = FirebaseDatabase.getInstance().getReference("Users").orderByChild("phone").equalTo(_completePhoneNumber);
@@ -148,11 +159,11 @@ public class SignIn extends AppCompatActivity {
                         Toast.makeText(SignIn.this, _fName+"\n" + _lName+"\n " +_email+"\n" +_phoneNo+"\n" +_password+"\n" +_dob+"\n" +_gender+"\n" +_address, Toast.LENGTH_SHORT).show();
                         
                         //Create a Session
-                        SessionManager sessionManager = new SessionManager(SignIn.this);
+                        SessionManager sessionManager = new SessionManager(SignIn.this,SessionManager.SESSION_USERSESSION);
                         sessionManager.createLoginSession(_fName,_lName, _address, _email, _phoneNo, _password, _dob, _gender,_address,_bloodgroup);
 
 //                        startActivity(new Intent(getApplicationContext(), UserDashboard.class));
-                        startActivity(new Intent(getApplicationContext(), reatailer_dashboard.class));
+                        startActivity(new Intent(getApplicationContext(), retailer_dashboard.class));
                         finish();
                         progressbar.setVisibility(View.GONE);
 

@@ -28,11 +28,16 @@ public class SessionManager {
     public static final String KEY_BLOODGROUP = "bloodgroup";
     public static final String KEY_ADDRESS = "address";
 
+    //Remember Me variables
+    private static final String IS_REMEMBERME = "IsRememberMe";
+    public static final String KEY_SESSIONPHONENUMBER = "phoneNumber";
+    public static final String KEY_SESSIONPASSWORD = "password";
+
     //constructor
 
-    public SessionManager(Context _context){
+    public SessionManager(Context _context, String sessionName){
         context = _context;
-        usersSession = _context.getSharedPreferences("userLoginSession", Context.MODE_PRIVATE);
+        usersSession = _context.getSharedPreferences(sessionName, Context.MODE_PRIVATE);
         editor = usersSession.edit();
 
     }
@@ -85,6 +90,41 @@ public class SessionManager {
     }
 
     public void logoutUserFromSession() {
+        editor.clear();
+        editor.commit();
+    }
+
+     /*
+    Remember Me
+    Session Functions
+     */
+
+    public void createRememberMeSession(String phoneNo, String password) {
+
+        editor.putBoolean(IS_REMEMBERME, true);
+        editor.putString(KEY_SESSIONPHONENUMBER, phoneNo);
+        editor.putString(KEY_SESSIONPASSWORD, password);
+
+        editor.commit();
+    }
+
+    public HashMap<String, String> getRemeberMeDetailsFromSession() {
+        HashMap<String, String> userData = new HashMap<String, String>();
+
+        userData.put(KEY_SESSIONPHONENUMBER, usersSession.getString(KEY_SESSIONPHONENUMBER, null));
+        userData.put(KEY_SESSIONPASSWORD, usersSession.getString(KEY_SESSIONPASSWORD, null));
+
+        return userData;
+    }
+
+    public boolean checkRememberMe() {
+        if (usersSession.getBoolean(IS_REMEMBERME, false)) {
+            return true;
+        } else
+            return false;
+    }
+
+    public void clearRememberMeSession() {
         editor.clear();
         editor.commit();
     }
