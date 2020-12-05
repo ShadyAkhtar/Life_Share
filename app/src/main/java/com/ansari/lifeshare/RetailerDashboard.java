@@ -9,7 +9,7 @@ import com.ansari.lifeshare.Databases.SessionManager;
 
 import java.util.HashMap;
 
-public class retailer_dashboard extends AppCompatActivity {
+public class RetailerDashboard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class retailer_dashboard extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.textView20);
 
-       SessionManager sessionManager = new SessionManager(this);
+       SessionManager sessionManager = new SessionManager(this, SessionManager.SESSION_REMEMMBERME);
         HashMap<String, String> usersDetails = sessionManager.getUsersDetailFromSession();
 
         String fisrtName = usersDetails.get(SessionManager.KEY_FIRSTNAME);

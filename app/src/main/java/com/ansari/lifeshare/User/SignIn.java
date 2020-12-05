@@ -19,7 +19,7 @@ import com.ansari.lifeshare.Common.LoginSignup.ForgetPassword;
 import com.ansari.lifeshare.Databases.SessionManager;
 import com.ansari.lifeshare.HelperClasses.CheckInternet;
 import com.ansari.lifeshare.R;
-import com.ansari.lifeshare.retailer_dashboard;
+import com.ansari.lifeshare.RetailerDashboard;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
@@ -163,7 +163,7 @@ public class SignIn extends AppCompatActivity {
                         sessionManager.createLoginSession(_fName,_lName, _address, _email, _phoneNo, _password, _dob, _gender,_address,_bloodgroup);
 
 //                        startActivity(new Intent(getApplicationContext(), UserDashboard.class));
-                        startActivity(new Intent(getApplicationContext(), retailer_dashboard.class));
+                        startActivity(new Intent(getApplicationContext(), RetailerDashboard.class));
                         finish();
                         progressbar.setVisibility(View.GONE);
 

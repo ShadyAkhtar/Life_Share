@@ -11,23 +11,31 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ansari.lifeshare.BloodCompatibility;
 import com.ansari.lifeshare.Common.LearnAboutBlood;
 import com.ansari.lifeshare.HelperClasses.HomeAdapter.FeaturedAdapter;
 import com.ansari.lifeshare.HelperClasses.HomeAdapter.FeaturedHelperClass;
+
+import com.ansari.lifeshare.DonorRecipient.DonorRegisteration;
+import com.ansari.lifeshare.DonorRecipient.RecipientForm;
+
 import com.ansari.lifeshare.R;
-import com.ansari.lifeshare.donor_registeration;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
 import static com.ansari.lifeshare.R.*;
 
-public class UserDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class UserDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemSelectedListener {
 
     //drawer menu
     DrawerLayout drawerLayout;
@@ -36,6 +44,10 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     Button btnSignIn,btnDonate;
     RecyclerView featuredRecycler;
     RecyclerView.Adapter adapter;
+    Spinner spinnerBldGrp;
+    TextView compatibleBloodGroup;
+
+    String _bloodgroup = "";
 
     static final float END_SCALE = 0.7f;
     LinearLayout contentView;
@@ -54,6 +66,15 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         drawerLayout = findViewById(id.drawer_layout);
         navigationView = findViewById(id.navigation_view);
         menuIcon = findViewById(id.menu_icon);
+
+        spinnerBldGrp = findViewById(R.id.spinner_bld_grp);
+        compatibleBloodGroup = findViewById(id.compatible_blood_group);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.bloodgroup, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerBldGrp.setAdapter(adapter);
+        spinnerBldGrp.setOnItemSelectedListener(this);
+
 
         btnSignIn = findViewById(id.btnSignIn);
         btnDonate = findViewById(id.btnDonate);
@@ -101,7 +122,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         btnDonate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(UserDashboard.this, donor_registeration.class);
+                Intent intent = new Intent(UserDashboard.this, DonorRegisteration.class);
                 startActivity(intent);
             }
         });
@@ -190,4 +211,50 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     }
 
 
+    public void goToRecipientForm(View view) {
+        Intent intent = new Intent(UserDashboard.this, RecipientForm.class);
+        startActivity(intent);
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
+        _bloodgroup = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(), _bloodgroup, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    public void checkBloodCompatibility(View view) {
+        switch (_bloodgroup){
+            case "A+":
+                compatibleBloodGroup.setText("A");
+                break;
+                case "A-":
+                compatibleBloodGroup.setText("A-");
+                break;
+                case "B+":
+                compatibleBloodGroup.setText("B+");
+                break;
+                case "B-":
+                compatibleBloodGroup.setText("B-");
+                break;
+                case "AB+":
+                compatibleBloodGroup.setText("AB+");
+                break;
+                case "AB-":
+                compatibleBloodGroup.setText("AB-");
+                break;
+                case "O+":
+                compatibleBloodGroup.setText("O+");
+                break;
+                case "O-":
+                compatibleBloodGroup.setText("O-");
+                break;
+
+        }
+    }
 }

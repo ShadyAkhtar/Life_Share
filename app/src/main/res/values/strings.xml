@@ -171,6 +171,7 @@ The blood we donate is going to help someone in need now or in the future so doi
     <string name="blood_group">Blood Group</string>
 
     <string-array name="bloodgroup">
+        <item>Select...</item>
         <item>A+</item>
         <item>A-</item>
         <item>B+</item>

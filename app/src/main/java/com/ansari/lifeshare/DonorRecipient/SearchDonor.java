@@ -1,17 +1,15 @@
-package com.ansari.lifeshare;
+package com.ansari.lifeshare.DonorRecipient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.Button;
 
-public class donor_registeration extends AppCompatActivity {
+import com.ansari.lifeshare.R;
 
-
-
+public class SearchDonor extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_donor_registeration);
+        setContentView(R.layout.activity_search_donor);
     }
 }
