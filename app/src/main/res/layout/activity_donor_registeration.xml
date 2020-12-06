@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User.SignUp"
+    tools:context=".DonorRecipient.DonorRegisteration"
     android:background="@color/backgroundColor">
 
 
@@ -428,7 +428,239 @@
 
 <!--                </com.google.android.material.textfield.TextInputEditText>-->
 <!--            </com.google.android.material.textfield.TextInputLayout>-->
+            <TextView
+                android:id="@+id/txtquest1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="15dp"
+                android:autofillHints="Fever in last 15 days?"
+                android:fontFamily="@font/alegreya_sans_medium"
+                android:text="Fever in last 15 days?"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
 
+            <RadioGroup
+                android:id="@+id/btnQuest1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/btnYes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="YES"
+                    android:textSize="16sp"/>
+
+                <RadioButton
+                    android:id="@+id/btnNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="NO"
+                    android:textSize="16sp"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txtquest2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="15dp"
+                android:autofillHints="Any Medicine ongoing?"
+                android:fontFamily="@font/alegreya_sans_medium"
+                android:text="Any Medicine ongoing?"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/btnQuest2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/btnYes2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="YES"
+                    android:textSize="16sp"/>
+
+                <RadioButton
+                    android:id="@+id/btnNo2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="NO"
+                    android:textSize="16sp"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txtquest3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="15dp"
+                android:autofillHints="Suffering from any long term disease?"
+                android:fontFamily="@font/alegreya_sans_medium"
+                android:text="Suffering from any long term disease?"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/btnQuest3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/btnYes3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="YES"
+                    android:textSize="16sp"/>
+
+                <RadioButton
+                    android:id="@+id/btnNo3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="NO"
+                    android:textSize="16sp"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txtquest4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="15dp"
+                android:autofillHints="Dengue in last 3 or 6 months?"
+                android:fontFamily="@font/alegreya_sans_medium"
+                android:text="Dengue in last 6 months?"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/btnQuest4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/btnYes4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="YES"
+                    android:textSize="16sp"/>
+
+                <RadioButton
+                    android:id="@+id/btnNo4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="NO"
+                    android:textSize="16sp"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txtquest5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="15dp"
+                android:autofillHints="Malaria in last 6 months?"
+                android:fontFamily="@font/alegreya_sans_medium"
+                android:text="Malaria in last 6 months?"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/btnQuest5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/btnYes5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="YES"
+                    android:textSize="16sp"/>
+
+                <RadioButton
+                    android:id="@+id/btnNo5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="NO"
+                    android:textSize="16sp"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txtquest6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="15dp"
+                android:autofillHints="Typhoid in last 6 months?"
+                android:fontFamily="@font/alegreya_sans_medium"
+                android:text="Typhoid in last 6 months?"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/btnQuest6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/btnYes6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="YES"
+                    android:textSize="16sp"/>
+
+                <RadioButton
+                    android:id="@+id/btnNo6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="NO"
+                    android:textSize="16sp"/>
+
+            </RadioGroup>
             <Button
                 android:id="@+id/btnSubmit"
                 android:layout_width="match_parent"
@@ -439,7 +671,7 @@
                 android:layout_marginBottom="35dp"
                 android:background="@drawable/btn_gradient"
                 android:text="Submit"
-                android:onClick="callNextSignupScreen"/>
+                android:onClick="storeNewDonorData"/>
 
         </LinearLayout>
     </LinearLayout>

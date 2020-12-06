@@ -150,6 +150,7 @@ public class VerifyOTP extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+    //yahi use karo sirf
 
     public void callNextScreenFromOTP(View view){
         String code = pinFromUser.getText().toString();

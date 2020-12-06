@@ -4,7 +4,7 @@ public class UserHelperClass {
 
     String fname, lname, dob, gender, bloodgroup, phone, email, address, username, password;
 
-   public UserHelperClass(){}
+    public UserHelperClass(){}
 
     public UserHelperClass(String fname, String lname, String dob, String gender, String bloodgroup, String phone, String email, String address, String username, String password) {
         this.fname = fname;
