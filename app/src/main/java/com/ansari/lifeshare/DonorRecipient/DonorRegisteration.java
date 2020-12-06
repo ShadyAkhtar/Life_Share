@@ -24,14 +24,14 @@ import com.hbb20.CountryCodePicker;
 
 public class DonorRegisteration extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    String _fname, _lname, _dob, _gender, _phoneNo, _q1, _q2, _q3, _q4, _q5, _q6;
+    String fname, lname, dob, gender, phoneNo, q1, q2, q3, q4, q5, q6;
     String bloodgroup="";
     DatePicker datePicker;
     CountryCodePicker countryCodePicker;
     Spinner spinnerBldGrp;
 
-    TextInputLayout  phoneNo, firstName, lastName;
-    RadioButton selectedRadioButton;
+    TextInputLayout  phone, firstName, lastName;
+    RadioButton selectedRadioButton, selectedRadioButton1, selectedRadioButton2, selectedRadioButton3, selectedRadioButton4, selectedRadioButton5, selectedRadioButton6;
     RadioGroup btnGender,btnQuest1,btnQuest2,btnQuest3,btnQuest4,btnQuest5,btnQuest6;
 
     @Override
@@ -44,65 +44,15 @@ public class DonorRegisteration extends AppCompatActivity implements AdapterView
         datePicker = findViewById(R.id.age_picker);
         btnGender = findViewById(R.id.btnGender);
         countryCodePicker = findViewById(R.id.country_code_picker);
-        phoneNo = findViewById(R.id.phoneNo);
+        phone = findViewById(R.id.phoneNo);
+        spinnerBldGrp = findViewById(R.id.spinner_bld_grp);
+
         btnQuest1 = findViewById(R.id.btnQuest1);
         btnQuest2 = findViewById(R.id.btnQuest2);
         btnQuest3 = findViewById(R.id.btnQuest3);
         btnQuest4 = findViewById(R.id.btnQuest4);
         btnQuest5 = findViewById(R.id.btnQuest5);
         btnQuest6 = findViewById(R.id.btnQuest6);
-
-
-
-        String _fName = firstName.getEditText().getText().toString().trim();
-        String _lName = lastName.getEditText().getText().toString().trim();
-        //Get complete phone number
-        String _getUserEnteredPhoneNumber = phoneNo.getEditText().getText().toString().trim();
-//Remove first zero if entered!
-        if (_getUserEnteredPhoneNumber.charAt(0) == '0') {
-            _getUserEnteredPhoneNumber = _getUserEnteredPhoneNumber.substring(1);
-        }
-//Complete phone number
-        final String _phoneNo = "+" + countryCodePicker.getFullNumber() + _getUserEnteredPhoneNumber;
-
-
-        int _dobday = datePicker.getDayOfMonth();
-        int _dobmonth = datePicker.getMonth() + 1;
-        int _dobyear = datePicker.getYear();
-        String _dob = Integer.toString(_dobday) + "-" + Integer.toString(_dobmonth) + "-" + Integer.toString(_dobyear);
-        selectedRadioButton  = (RadioButton)findViewById(btnGender.getCheckedRadioButtonId());
-        //get RadioButton text
-        String _gender = selectedRadioButton.getText().toString();
-
-        spinnerBldGrp = findViewById(R.id.spinner_bld_grp);
-        selectedRadioButton  = (RadioButton)findViewById(btnQuest1.getCheckedRadioButtonId());
-        //get RadioButton text
-        String _q1 = selectedRadioButton.getText().toString();
-
-
-        selectedRadioButton  = (RadioButton)findViewById(btnQuest2.getCheckedRadioButtonId());
-        //get RadioButton text
-        String _q2 = selectedRadioButton.getText().toString();
-
-
-        selectedRadioButton  = (RadioButton)findViewById(btnQuest3.getCheckedRadioButtonId());
-        //get RadioButton text
-        String _q3 = selectedRadioButton.getText().toString();
-
-        selectedRadioButton  = (RadioButton)findViewById(btnQuest4.getCheckedRadioButtonId());
-        //get RadioButton text
-        String _q4 = selectedRadioButton.getText().toString();
-
-
-        selectedRadioButton  = (RadioButton)findViewById(btnQuest5.getCheckedRadioButtonId());
-        //get RadioButton text
-        String _q5 = selectedRadioButton.getText().toString();
-
-        selectedRadioButton  = (RadioButton)findViewById(btnQuest6.getCheckedRadioButtonId());
-        //get RadioButton text
-        String _q6 = selectedRadioButton.getText().toString();
-
-
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.bloodgroup, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -112,13 +62,66 @@ public class DonorRegisteration extends AppCompatActivity implements AdapterView
 
     }
 
-    public void storeNewDonorData(View view) {
+    public void storeNewDonorData(View view){
+        fname = firstName.getEditText().getText().toString().trim();
+        lname = lastName.getEditText().getText().toString().trim();
+        //Get complete phone number
+        String _getUserEnteredPhoneNumber = phone.getEditText().getText().toString().trim();
+//Remove first zero if entered!
+        if (_getUserEnteredPhoneNumber.charAt(0) == '0') {
+            _getUserEnteredPhoneNumber = _getUserEnteredPhoneNumber.substring(1);
+        }
+//Complete phone number
+        phoneNo = "+" + countryCodePicker.getFullNumber() + _getUserEnteredPhoneNumber;
 
-        FirebaseDatabase rootnode = FirebaseDatabase.getInstance();
-        DatabaseReference reference = rootnode.getReference("Donors");
 
-        DonorHelperClass newUser = new DonorHelperClass(_fname, _lname, _dob, _gender, bloodgroup, _phoneNo, _q1, _q2, _q3, _q4, _q5, _q6);
-        reference.child(_phoneNo).setValue(newUser);
+        int _dobday = datePicker.getDayOfMonth();
+        int _dobmonth = datePicker.getMonth() + 1;
+        int _dobyear = datePicker.getYear();
+        dob = Integer.toString(_dobday) + "-" + Integer.toString(_dobmonth) + "-" + Integer.toString(_dobyear);
+        selectedRadioButton  = (RadioButton)findViewById(btnGender.getCheckedRadioButtonId());
+        //get RadioButton text
+        gender = selectedRadioButton.getText().toString();
+
+
+        selectedRadioButton1  = (RadioButton)findViewById(btnQuest1.getCheckedRadioButtonId());
+        //get RadioButton text
+        q1 = selectedRadioButton1.getText().toString();
+
+
+        selectedRadioButton2  = (RadioButton)findViewById(btnQuest2.getCheckedRadioButtonId());
+        //get RadioButton text
+        q2 = selectedRadioButton2.getText().toString();
+
+
+        selectedRadioButton3  = (RadioButton)findViewById(btnQuest3.getCheckedRadioButtonId());
+        //get RadioButton text
+        q3 = selectedRadioButton3.getText().toString();
+
+        selectedRadioButton4  = (RadioButton)findViewById(btnQuest4.getCheckedRadioButtonId());
+        //get RadioButton text
+        q4 = selectedRadioButton4.getText().toString();
+
+
+        selectedRadioButton5  = (RadioButton)findViewById(btnQuest5.getCheckedRadioButtonId());
+        //get RadioButton text
+        q5 = selectedRadioButton5.getText().toString();
+
+        selectedRadioButton6  = (RadioButton)findViewById(btnQuest6.getCheckedRadioButtonId());
+        //get RadioButton text
+        q6 = selectedRadioButton6.getText().toString();
+
+
+
+        newDonorData();
+    }
+    private void newDonorData() {
+
+        FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
+        DatabaseReference reference = rootNode.getReference("Donors");
+
+        DonorHelperClass newUser = new DonorHelperClass(fname, lname, dob, gender, bloodgroup, phoneNo, q1, q2, q3, q4, q5, q6);
+        reference.child(phoneNo).setValue(newUser);
         Intent intent = new Intent(getApplicationContext(), UserDashboard.class);
         startActivity(intent);
         finish();

@@ -215,6 +215,10 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         Intent intent = new Intent(UserDashboard.this, RecipientForm.class);
         startActivity(intent);
 
+    }public void goToDonorForm(View view) {
+        Intent intent = new Intent(UserDashboard.this, DonorRegisteration.class);
+        startActivity(intent);
+
     }
 
     @Override
