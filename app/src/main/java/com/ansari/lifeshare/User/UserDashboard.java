@@ -235,25 +235,25 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     public void checkBloodCompatibility(View view) {
         switch (_bloodgroup){
             case "A+":
-                compatibleBloodGroup.setText("A");
+                compatibleBloodGroup.setText("A+,A-,O+,O-");
                 break;
                 case "A-":
-                compatibleBloodGroup.setText("A-");
+                compatibleBloodGroup.setText("A-,O-");
                 break;
                 case "B+":
-                compatibleBloodGroup.setText("B+");
+                compatibleBloodGroup.setText("B+,B-,O+,O-");
                 break;
                 case "B-":
-                compatibleBloodGroup.setText("B-");
+                compatibleBloodGroup.setText("B-,O-");
                 break;
                 case "AB+":
-                compatibleBloodGroup.setText("AB+");
+                compatibleBloodGroup.setText("AB+,AB-,O+,O-,B+,B-,A+,A-");
                 break;
                 case "AB-":
                 compatibleBloodGroup.setText("AB-");
                 break;
                 case "O+":
-                compatibleBloodGroup.setText("O+");
+                compatibleBloodGroup.setText("O+,O-");
                 break;
                 case "O-":
                 compatibleBloodGroup.setText("O-");

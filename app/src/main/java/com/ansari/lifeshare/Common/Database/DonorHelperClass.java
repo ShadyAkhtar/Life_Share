@@ -1,56 +1,55 @@
 package com.ansari.lifeshare.Common.Database;
 
 public class DonorHelperClass {
-    String _fname, _lname, _dob, _gender, bloodgroup, _phone, _q1, _q2, _q3, _q4, _q5, _q6;
+    String fname, lname, dob, gender, bloodgroup, phone, q1, q2, q3, q4, q5, q6;
 
-    DonorHelperClass() {
-    }
+    DonorHelperClass() { }
 
-    public DonorHelperClass(String _fname, String _lname, String _dob, String _gender, String bloodgroup, String _phone, String _q1, String _q2, String _q3, String _q4, String _q5, String _q6) {
-        this._fname = _fname;
-        this._lname = _lname;
-        this._dob = _dob;
-        this._gender = _gender;
+    public DonorHelperClass(String fname, String lname, String dob, String gender, String bloodgroup, String phone, String q1, String q2, String q3, String q4, String q5, String q6) {
+        this.fname = fname;
+        this.lname = lname;
+        this.dob = dob;
+        this.gender = gender;
         this.bloodgroup = bloodgroup;
-        this._phone = _phone;
-        this._q1 = _q1;
-        this._q2 = _q2;
-        this._q3 = _q3;
-        this._q4 = _q4;
-        this._q5 = _q5;
-        this._q6 = _q6;
+        this.phone = phone;
+        this.q1 = q1;
+        this.q2 = q2;
+        this.q3 = q3;
+        this.q4 = q4;
+        this.q5 = q5;
+        this.q6 = q6;
     }
 
-    public String get_fname() {
-        return _fname;
+    public String getFname() {
+        return fname;
     }
 
-    public void set_fname(String _fname) {
-        this._fname = _fname;
+    public void setFname(String fname) {
+        this.fname = fname;
     }
 
-    public String get_lname() {
-        return _lname;
+    public String getLname() {
+        return lname;
     }
 
-    public void set_lname(String _lname) {
-        this._lname = _lname;
+    public void setLname(String lname) {
+        this.lname = lname;
     }
 
-    public String get_dob() {
-        return _dob;
+    public String getDob() {
+        return dob;
     }
 
-    public void set_dob(String _dob) {
-        this._dob = _dob;
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
-    public String get_gender() {
-        return _gender;
+    public String getGender() {
+        return gender;
     }
 
-    public void set_gender(String _gender) {
-        this._gender = _gender;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getBloodgroup() {
@@ -61,59 +60,59 @@ public class DonorHelperClass {
         this.bloodgroup = bloodgroup;
     }
 
-    public String get_phone() {
-        return _phone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void set_phone(String _phone) {
-        this._phone = _phone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String get_q1() {
-        return _q1;
+    public String getQ1() {
+        return q1;
     }
 
-    public void set_q1(String _q1) {
-        this._q1 = _q1;
+    public void setQ1(String q1) {
+        this.q1 = q1;
     }
 
-    public String get_q2() {
-        return _q2;
+    public String getQ2() {
+        return q2;
     }
 
-    public void set_q2(String _q2) {
-        this._q2 = _q2;
+    public void setQ2(String q2) {
+        this.q2 = q2;
     }
 
-    public String get_q3() {
-        return _q3;
+    public String getQ3() {
+        return q3;
     }
 
-    public void set_q3(String _q3) {
-        this._q3 = _q3;
+    public void setQ3(String q3) {
+        this.q3 = q3;
     }
 
-    public String get_q4() {
-        return _q4;
+    public String getQ4() {
+        return q4;
     }
 
-    public void set_q4(String _q4) {
-        this._q4 = _q4;
+    public void setQ4(String q4) {
+        this.q4 = q4;
     }
 
-    public String get_q5() {
-        return _q5;
+    public String getQ5() {
+        return q5;
     }
 
-    public void set_q5(String _q5) {
-        this._q5 = _q5;
+    public void setQ5(String q5) {
+        this.q5 = q5;
     }
 
-    public String get_q6() {
-        return _q6;
+    public String getQ6() {
+        return q6;
     }
 
-    public void set_q6(String _q6) {
-        this._q6 = _q6;
+    public void setQ6(String q6) {
+        this.q6 = q6;
     }
 }
