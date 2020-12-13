@@ -52,7 +52,8 @@ public class RecipientForm extends AppCompatActivity implements AdapterView.OnIt
         spinnerBldGrp.setAdapter(adapter);
         spinnerBldGrp.setOnItemSelectedListener(this);
     }
-    public void storeNewDonorData(View view) {
+
+    public void goToSearchDonors(View view) {
         pname = patientName.getEditText().getText().toString().trim();
         //Get complete phone number
         String _getUserEnteredPhoneNumber = phone.getEditText().getText().toString().trim();
@@ -74,25 +75,22 @@ public class RecipientForm extends AppCompatActivity implements AdapterView.OnIt
         illnessDesc = description.getEditText().getText().toString().trim();
         hospName = hosoital.getEditText().getText().toString().trim();
 
-        newDonorData();
+        newRecipientData();
     }
 
-    private void newDonorData() {
+    private void newRecipientData() {
 
         FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
-        DatabaseReference reference = rootNode.getReference("Donors");
+        DatabaseReference reference = rootNode.getReference("Recipients");
 
-        RecipientHelperClass newUser = new RecipientHelperClass(pname,dob, gender,  phoneNo,illnessDesc,hospName );
+        RecipientHelperClass newUser = new RecipientHelperClass(pname, hospName, illnessDesc, dob, gender,  phoneNo);
         reference.child(phoneNo).setValue(newUser);
-        Intent intent = new Intent(getApplicationContext(), UserDashboard.class);
+        Intent intent = new Intent(getApplicationContext(), SearchDonor.class);
         startActivity(intent);
         finish();
     }
 
-    public void goToSearchDonors(View view) {
-        Intent intent = new Intent(RecipientForm.this,SearchDonor.class);
-        startActivity(intent);
-    }
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {

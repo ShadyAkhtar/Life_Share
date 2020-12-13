@@ -1,7 +1,7 @@
 package com.ansari.lifeshare.Common.Database;
 
 public class RecipientHelperClass {
-    String pname,hospName,illnessDesc ,dob,bloodgroup,  gender, phoneNo;
+    String pname, hospName, illnessDesc, dob, bloodgroup,  gender, phoneNo;
 
     RecipientHelperClass(){}
 
